@@ -104,7 +104,7 @@ namespace PuntuApp.UserControls
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources._481862_zCYAMdv11;
+            //pictureBox1.BackgroundImage = Properties.Resources._481862_zCYAMdv11;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(3, 3);

@@ -117,7 +117,7 @@ namespace PuntuApp.UserControls
             // 
             // pbPhoto
             // 
-            pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
+            //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
             pbPhoto.BackgroundImageLayout = ImageLayout.Zoom;
             pbPhoto.Dock = DockStyle.Fill;
             pbPhoto.Location = new Point(3, 3);

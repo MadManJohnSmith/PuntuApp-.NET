@@ -47,7 +47,7 @@ namespace PuntuApp.UserControls
             txtPassword.Clear();
             txtPassVeri.Clear();
             cbUserType.SelectedIndex = 0;
-            pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_133E87_FILL0_wght400_GRAD0_opsz24;
+            //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_133E87_FILL0_wght400_GRAD0_opsz24;
 
             // Regresar a la página de empleados
             navigationControl.Display(1);

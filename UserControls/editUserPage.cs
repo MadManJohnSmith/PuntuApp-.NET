@@ -57,7 +57,7 @@ namespace PuntuApp.UserControls
                 }
                 else
                 {
-                    pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
+                    //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
                 }
             }
             else
@@ -72,7 +72,7 @@ namespace PuntuApp.UserControls
             txtPassword.Clear();
             txtPassVeri.Clear();
             cbUserType.SelectedIndex = 0;
-            pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
+            //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
 
             isEditing = false;
             userId = 0;
