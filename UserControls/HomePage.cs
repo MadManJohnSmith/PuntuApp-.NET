@@ -12,9 +12,15 @@ namespace PuntuApp.UserControls
 {
     public partial class HomePage : UserControl
     {
-        public HomePage()
+        private string username;
+        private string role;
+
+        public HomePage(string username, string role) // Modified constructor
         {
             InitializeComponent();
+            this.username = username;
+            this.role = role;
+            // ...additional initialization if needed...
         }
 
         private void label12_Click(object sender, EventArgs e)

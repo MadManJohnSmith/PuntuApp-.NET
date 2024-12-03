@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PuntuApp.Helpers;
 
 namespace PuntuApp.UserControls
 {
@@ -16,15 +15,16 @@ namespace PuntuApp.UserControls
     {
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedtColor = Color.FromArgb(203, 220, 235);
-        private NavigationControl navigationControl;
-        private DatabaseHelper databaseHelper;
+        private NavigationControl navigationControl; 
+        private string username;
+        private string role; // Added role variable
         private DataTable employeesData;
-        public EmployeesPage(NavigationControl navigationControl, string connectionString)
+        public EmployeesPage(NavigationControl navigationControl, string username, string role) // Added role parameter
         {
             InitializeComponent();
             this.navigationControl = navigationControl;
-            this.databaseHelper = new DatabaseHelper(connectionString);
-            LoadEmployees();
+            this.role = role; // Initialize role
+            //LoadEmployees();
             HighlightButton(btnID);
             btnID.Click += (s, e) => OrdenarColumna("ID");
             btnNombre.Click += (s, e) => OrdenarColumna("name");
@@ -32,7 +32,6 @@ namespace PuntuApp.UserControls
             btnEntrada.Click += (s, e) => OrdenarColumna("lastEntry");
             btnSalida.Click += (s, e) => OrdenarColumna("lastExit");
             searchBar.TextChanged += searchBar_TextChanged;
-            //AddTestRowsToDataGridView();
             FilterSelection.SelectedIndexChanged += FilterSelection_SelectedIndexChanged;
             txtFilter.TextChanged += txtFilter_TextChanged;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
@@ -44,7 +43,7 @@ namespace PuntuApp.UserControls
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 int userId = Convert.ToInt32(row.Cells["ID"].Value);
                 var editPage = navigationControl.GetControl<editUserPage>(4);
-                editPage.SetUserData(userId);
+                //editPage.SetUserData(userId);
                 navigationControl.Display(4);
             }
         }
@@ -166,48 +165,55 @@ namespace PuntuApp.UserControls
                 MessageBox.Show("Error al añadir filas de prueba: " + ex.Message);
             }
         }
-        public void LoadEmployees()
-        {
-            try
-            {
-                // Obtener datos de empleados desde la base de datos
-                employeesData = databaseHelper.GetUsersWithAttendance();
+        //public void LoadEmployees()
+        //{
+        //    try
+        //    {
+        //        if (role == "Admin")
+        //        {
+        //            // Obtener datos de empleados desde la base de datos
+        //            //employeesData = databaseHelper.GetUsersWithAttendance();
+        //        }
+        //        else
+        //        {
+        //            // Load limited data
+        //        }
 
-                // Agregar la columna "Estado" calculada al DataTable
-                employeesData.Columns.Add("Estado", typeof(string));
+        //        // Agregar la columna "Estado" calculada al DataTable
+        //        employeesData.Columns.Add("Estado", typeof(string));
 
-                foreach (DataRow row in employeesData.Rows)
-                {
-                    DateTime? lastEntry = row["lastEntry"] != DBNull.Value ? (DateTime?)row["lastEntry"] : null;
-                    DateTime? lastExit = row["lastExit"] != DBNull.Value ? (DateTime?)row["lastExit"] : null;
+        //        foreach (DataRow row in employeesData.Rows)
+        //        {
+        //            DateTime? lastEntry = row["lastEntry"] != DBNull.Value ? (DateTime?)row["lastEntry"] : null;
+        //            DateTime? lastExit = row["lastExit"] != DBNull.Value ? (DateTime?)row["lastExit"] : null;
 
-                    // Determinar el estado en función de la última entrada y salida
-                    string state = (lastEntry.HasValue && (!lastExit.HasValue || lastEntry > lastExit)) ? "Activo" : "Offline";
-                    row["Estado"] = state;
-                }
+        //            // Determinar el estado en función de la última entrada y salida
+        //            string state = (lastEntry.HasValue && (!lastExit.HasValue || lastEntry > lastExit)) ? "Activo" : "Offline";
+        //            row["Estado"] = state;
+        //        }
 
-                // Configurar las columnas del DataGridView
-                dataGridView1.DataSource = employeesData;
-                dataGridView1.Columns["ID"].HeaderText = "ID";
-                dataGridView1.Columns["name"].HeaderText = "Nombre";
-                dataGridView1.Columns["Username"].HeaderText = "Nombre de Usuario";
-                dataGridView1.Columns["Estado"].HeaderText = "Estado";
-                dataGridView1.Columns["lastEntry"].HeaderText = "Última Entrada";
-                dataGridView1.Columns["lastExit"].HeaderText = "Última Salida";
+        //        // Configurar las columnas del DataGridView
+        //        dataGridView1.DataSource = employeesData;
+        //        dataGridView1.Columns["ID"].HeaderText = "ID";
+        //        dataGridView1.Columns["name"].HeaderText = "Nombre";
+        //        dataGridView1.Columns["Username"].HeaderText = "Nombre de Usuario";
+        //        dataGridView1.Columns["Estado"].HeaderText = "Estado";
+        //        dataGridView1.Columns["lastEntry"].HeaderText = "Última Entrada";
+        //        dataGridView1.Columns["lastExit"].HeaderText = "Última Salida";
 
-                // Ajustar ancho de las columnas
-                dataGridView1.Columns["ID"].FillWeight = 4f;
-                dataGridView1.Columns["name"].FillWeight = 26f;
-                dataGridView1.Columns["Username"].FillWeight = 17f;
-                dataGridView1.Columns["lastEntry"].FillWeight = 18f;
-                dataGridView1.Columns["lastExit"].FillWeight = 18f;
-                dataGridView1.Columns["Estado"].FillWeight = 10f;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los empleados: " + ex.Message);
-            }
-        }
+        //        // Ajustar ancho de las columnas
+        //        dataGridView1.Columns["ID"].FillWeight = 4f;
+        //        dataGridView1.Columns["name"].FillWeight = 26f;
+        //        dataGridView1.Columns["Username"].FillWeight = 17f;
+        //        dataGridView1.Columns["lastEntry"].FillWeight = 18f;
+        //        dataGridView1.Columns["lastExit"].FillWeight = 18f;
+        //        dataGridView1.Columns["Estado"].FillWeight = 10f;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al cargar los empleados: " + ex.Message);
+        //    }
+        //}
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             if (employeesData != null)
@@ -264,11 +270,11 @@ namespace PuntuApp.UserControls
                     dv.RowFilter = filterExpression;
                     dataGridView1.DataSource = dv;
                 }
+    }
                 else
                 {
                     dataGridView1.DataSource = employeesData;
                 }
             }
         }
-    }
 }

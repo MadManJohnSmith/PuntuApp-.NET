@@ -113,7 +113,7 @@ namespace PuntuApp.UserControls
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar Usuario";
             btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
+            //btnEliminar.Click += btnEliminar_Click;
             // 
             // pbPhoto
             // 
@@ -377,7 +377,7 @@ namespace PuntuApp.UserControls
             btnAddUser.TabIndex = 3;
             btnAddUser.Text = "Guardar Cambios";
             btnAddUser.UseVisualStyleBackColor = true;
-            btnAddUser.Click += btnAddUser_Click;
+            //btnAddUser.Click += btnAddUser_Click;
             // 
             // editUserPage
             // 

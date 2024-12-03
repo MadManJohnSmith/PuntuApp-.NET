@@ -1,6 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI;
-using PuntuApp.Helpers;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,12 +30,14 @@ namespace PuntuApp
             string password = txtPassword.Text;
             try
             {
-                bool isValidUser = client.validarUsuario(username, password);
-                if (isValidUser == true)
+                string jsonResponse = client.validarUsuario(username, password);
+                if (jsonResponse != null)
                 {
-                    string userConnectionString = $"server=localhost;database=puntuapp;uid={username};pwd={password};";
+                    // Parse the JSON response
+                    var loginData = JsonConvert.DeserializeObject<LoginData>(jsonResponse);
+                    // Pass username and role to MainPage
                     this.Hide();
-                    MainPage home = new MainPage(userConnectionString, 1);
+                    MainPage home = new MainPage(loginData.username, loginData.rol);
                     home.Show();
                 }
                 else
@@ -54,6 +54,13 @@ namespace PuntuApp
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        
+        // Define a class to deserialize the JSON response
+        private class LoginData
+        {
+            public string username { get; set; }
+            public string rol { get; set; }
         }
     }
 }

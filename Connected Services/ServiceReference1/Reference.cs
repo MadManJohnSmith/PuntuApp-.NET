@@ -84,13 +84,13 @@ namespace WindowsFormsApp1.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
     public partial class validarUsuarioResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool @return;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string @return;
         
         public validarUsuarioResponseBody() {
         }
         
-        public validarUsuarioResponseBody(bool @return) {
+        public validarUsuarioResponseBody(string @return) {
             this.@return = @return;
         }
     }
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             return base.Channel.validarUsuario(request);
         }
         
-        public bool validarUsuario(string username, string password) {
+        public string validarUsuario(string username, string password) {
             WindowsFormsApp1.ServiceReference1.validarUsuarioRequest inValue = new WindowsFormsApp1.ServiceReference1.validarUsuarioRequest();
             inValue.Body = new WindowsFormsApp1.ServiceReference1.validarUsuarioRequestBody();
             inValue.Body.username = username;

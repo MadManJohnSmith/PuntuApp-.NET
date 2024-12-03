@@ -1,5 +1,4 @@
 using Calculadora_Areas_Perimetros;
-using PuntuApp.Helpers;
 using PuntuApp.UserControls;
 using System;
 using System.Collections.Generic;
@@ -24,16 +23,15 @@ namespace PuntuApp
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedtColor = Color.FromArgb(203, 220, 235);
 
-        private string connectionString;
-        private int loggedInUserId;
-        public MainPage(string connectionString, int loggedInUserId)
+        private string username;
+        private string role;
+        public MainPage(string username, string role)
         {
             InitializeComponent();
-            this.connectionString = connectionString;
-            this.loggedInUserId = loggedInUserId;
+            this.username = username;
+            this.role = role;
             InitializeNavigationButtons();
             InitializeNavigationControl();
-            UpdateUserInfo(loggedInUserId);
         }
         private void InitializeNavigationControl()
         {
@@ -42,11 +40,11 @@ namespace PuntuApp
 
             List<UserControl> userControls = new List<UserControl>()
             {
-                new HomePage(),//0
-                new EmployeesPage(navigationControl, connectionString),//1
-                new UserPage(),//2
-                new addUserPage(navigationControl, connectionString),//3
-                new editUserPage(navigationControl, connectionString, loggedInUserId)//4
+                new HomePage(username, role), // Updated instantiation with parameters
+                new EmployeesPage(navigationControl, username, role),//1
+                new UserPage(username, role), // Updated instantiation with parameters
+                new addUserPage(navigationControl, username, role),//3
+                new editUserPage(navigationControl, username, role)//4
             };
 
 
@@ -86,24 +84,24 @@ namespace PuntuApp
                 navigationButtons.Highlight(btnUsuario);
             }
         }
-        private void UpdateUserInfo(int userId)
-        {
-            DatabaseHelper dbHelper = new DatabaseHelper(connectionString);
-            DataRow userRow = dbHelper.GetUserById(userId);
+        //private void UpdateUserInfo(int userId)
+        //{
+        //    DatabaseHelper dbHelper = new DatabaseHelper(connectionString);
+        //    DataRow userRow = dbHelper.GetUserById(userId);
 
-            if (userRow != null)
-            {
-                string fullName = userRow["name"].ToString();
-                string username = userRow["Username"].ToString();
-                DateTime? lastEntry = userRow["lastEntry"] != DBNull.Value ? (DateTime?)userRow["lastEntry"] : null;
-                DateTime? lastExit = userRow["lastExit"] != DBNull.Value ? (DateTime?)userRow["lastExit"] : null;
+        //    if (userRow != null)
+        //    {
+        //        string fullName = userRow["name"].ToString();
+        //        string username = userRow["Username"].ToString();
+        //        DateTime? lastEntry = userRow["lastEntry"] != DBNull.Value ? (DateTime?)userRow["lastEntry"] : null;
+        //        DateTime? lastExit = userRow["lastExit"] != DBNull.Value ? (DateTime?)userRow["lastExit"] : null;
 
-                string state = (lastEntry.HasValue && (!lastExit.HasValue || lastEntry > lastExit)) ? "Activo" : "Offline";
+        //        string state = (lastEntry.HasValue && (!lastExit.HasValue || lastEntry > lastExit)) ? "Activo" : "Offline";
 
-                lblUserInfo.Text = $"Nombre: {fullName}\nNombre de Usuario: {username}\nID: {userId}";
-                lblState.Text = $"Estado: {state}";
-            }
-        }
+        //        lblUserInfo.Text = $"Nombre: {fullName}\nNombre de Usuario: {username}\nID: {userId}";
+        //        lblState.Text = $"Estado: {state}";
+        //    }
+        //}
         private void MainPage_Load(object sender, EventArgs e)
         {
 
@@ -118,7 +116,7 @@ namespace PuntuApp
 
             isClosing = true;
 
-            switch (MessageBox.Show(this, "¿Seguro que quieres salir?", "Cerrando...", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "ï¿½Seguro que quieres salir?", "Cerrando...", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:
                     Application.Exit();

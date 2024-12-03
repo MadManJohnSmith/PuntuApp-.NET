@@ -83,7 +83,7 @@ namespace PuntuApp.UserControls
             btnAddUser.TabIndex = 3;
             btnAddUser.Text = "Agregar Usuario";
             btnAddUser.UseVisualStyleBackColor = true;
-            btnAddUser.Click += btnAddUser_Click;
+            //btnAddUser.Click += btnAddUser_Click;
             // 
             // label6
             // 
