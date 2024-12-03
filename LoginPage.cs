@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using PuntuApp.Helpers;
 using System;
 using System.Collections.Generic;
@@ -24,29 +25,32 @@ namespace PuntuApp
             txtUsername.Clear();
             txtPassword.Clear();
         }
+        WindowsFormsApp1.ServiceReference1.AuthClient client = new WindowsFormsApp1.ServiceReference1.AuthClient();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
+            string username = txtUsername.Text;
             string password = txtPassword.Text;
-
-            // Utiliza un usuario de la aplicación con permisos para autenticar
-            string appConnectionString = "server=localhost;database=puntuapp;uid=appUser;pwd=appPassword;";
-            DatabaseHelper dbHelper = new DatabaseHelper(appConnectionString);
-
-            int loggedInUserId = dbHelper.AuthenticateUser(username, password);
-
-            if (loggedInUserId >= 0)
+            try
             {
-                string userConnectionString = $"server=localhost;database=puntuapp;uid={username};pwd={password};";
-                this.Hide();
-                MainPage home = new MainPage(userConnectionString, loggedInUserId);
-                home.Show();
+                bool isValidUser = client.validarUsuario(username, password);
+                if (isValidUser == true)
+                {
+                    string userConnectionString = $"server=localhost;database=puntuapp;uid={username};pwd={password};";
+                    this.Hide();
+                    MainPage home = new MainPage(userConnectionString, 1);
+                    home.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario no encontrado o credenciales incorrectas.");
+                MessageBox.Show($"Error al intentar iniciar sesión: {ex.Message}");
             }
         }
+        
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
