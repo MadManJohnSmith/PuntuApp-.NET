@@ -31,445 +31,444 @@ namespace PuntuApp.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            btnAddUser = new Button();
-            label6 = new Label();
-            tableLayoutPanel11 = new TableLayoutPanel();
-            txtPassVeri = new TextBox();
-            label5 = new Label();
-            txtPassword = new TextBox();
-            tableLayoutPanel10 = new TableLayoutPanel();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            label4 = new Label();
-            txtUsername = new TextBox();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            cbUserType = new ComboBox();
-            label7 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            tableLayoutPanel9 = new TableLayoutPanel();
-            txtMaterno = new TextBox();
-            txtPaterno = new TextBox();
-            tableLayoutPanel8 = new TableLayoutPanel();
-            label1 = new Label();
-            txtName = new TextBox();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            pbPhoto = new PictureBox();
-            btnPhoto = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            btnCancelar = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel11.SuspendLayout();
-            tableLayoutPanel10.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel9.SuspendLayout();
-            tableLayoutPanel8.SuspendLayout();
-            tableLayoutPanel7.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbPhoto).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            SuspendLayout();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtPassVeri = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbUserType = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtMaterno = new System.Windows.Forms.TextBox();
+            this.txtPaterno = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pbPhoto = new System.Windows.Forms.PictureBox();
+            this.btnPhoto = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // btnAddUser
             // 
-            btnAddUser.Dock = DockStyle.Bottom;
-            btnAddUser.Location = new Point(3, 306);
-            btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(683, 23);
-            btnAddUser.TabIndex = 3;
-            btnAddUser.Text = "Agregar Usuario";
-            btnAddUser.UseVisualStyleBackColor = true;
-            //btnAddUser.Click += btnAddUser_Click;
+            this.btnAddUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddUser.Location = new System.Drawing.Point(3, 264);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(584, 20);
+            this.btnAddUser.TabIndex = 3;
+            this.btnAddUser.Text = "Agregar Usuario";
+            this.btnAddUser.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label6.Location = new Point(3, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(330, 42);
-            label6.TabIndex = 0;
-            label6.Text = "Repetir Contraseña:";
-            label6.TextAlign = ContentAlignment.BottomLeft;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(280, 35);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Repetir Contraseña:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // tableLayoutPanel11
             // 
-            tableLayoutPanel11.ColumnCount = 1;
-            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel11.Controls.Add(label6, 0, 0);
-            tableLayoutPanel11.Controls.Add(txtPassVeri, 0, 1);
-            tableLayoutPanel11.Dock = DockStyle.Fill;
-            tableLayoutPanel11.Location = new Point(344, 3);
-            tableLayoutPanel11.Name = "tableLayoutPanel11";
-            tableLayoutPanel11.RowCount = 2;
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel11.Size = new Size(336, 71);
-            tableLayoutPanel11.TabIndex = 1;
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.txtPassVeri, 0, 1);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(295, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(286, 59);
+            this.tableLayoutPanel11.TabIndex = 1;
             // 
             // txtPassVeri
             // 
-            txtPassVeri.Dock = DockStyle.Fill;
-            txtPassVeri.Location = new Point(3, 45);
-            txtPassVeri.Name = "txtPassVeri";
-            txtPassVeri.Size = new Size(330, 23);
-            txtPassVeri.TabIndex = 1;
+            this.txtPassVeri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPassVeri.Location = new System.Drawing.Point(3, 38);
+            this.txtPassVeri.Name = "txtPassVeri";
+            this.txtPassVeri.Size = new System.Drawing.Size(280, 20);
+            this.txtPassVeri.TabIndex = 1;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label5.Location = new Point(3, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(329, 42);
-            label5.TabIndex = 0;
-            label5.Text = "Contraseña:";
-            label5.TextAlign = ContentAlignment.BottomLeft;
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(280, 35);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Contraseña:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // txtPassword
             // 
-            txtPassword.Dock = DockStyle.Fill;
-            txtPassword.Location = new Point(3, 45);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(329, 23);
-            txtPassword.TabIndex = 1;
+            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPassword.Location = new System.Drawing.Point(3, 38);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(280, 20);
+            this.txtPassword.TabIndex = 1;
             // 
             // tableLayoutPanel10
             // 
-            tableLayoutPanel10.ColumnCount = 1;
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel10.Controls.Add(label5, 0, 0);
-            tableLayoutPanel10.Controls.Add(txtPassword, 0, 1);
-            tableLayoutPanel10.Dock = DockStyle.Fill;
-            tableLayoutPanel10.Location = new Point(3, 3);
-            tableLayoutPanel10.Name = "tableLayoutPanel10";
-            tableLayoutPanel10.RowCount = 2;
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel10.Size = new Size(335, 71);
-            tableLayoutPanel10.TabIndex = 0;
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.txtPassword, 0, 1);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(286, 59);
+            this.tableLayoutPanel10.TabIndex = 0;
             // 
             // tableLayoutPanel6
             // 
-            tableLayoutPanel6.ColumnCount = 2;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel6.Controls.Add(tableLayoutPanel10, 0, 0);
-            tableLayoutPanel6.Controls.Add(tableLayoutPanel11, 1, 0);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(3, 169);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 1;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel6.Size = new Size(683, 77);
-            tableLayoutPanel6.TabIndex = 2;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel11, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 145);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(584, 65);
+            this.tableLayoutPanel6.TabIndex = 2;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label4.Location = new Point(3, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(250, 38);
-            label4.TabIndex = 0;
-            label4.Text = "Nombre de Usuario:";
-            label4.TextAlign = ContentAlignment.TopRight;
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(213, 32);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Nombre de Usuario:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtUsername
             // 
-            txtUsername.Dock = DockStyle.Top;
-            txtUsername.Location = new Point(259, 3);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(421, 23);
-            txtUsername.TabIndex = 1;
+            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtUsername.Location = new System.Drawing.Point(222, 3);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(359, 20);
+            this.txtUsername.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
-            tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.50307F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62.496933F));
-            tableLayoutPanel5.Controls.Add(cbUserType, 1, 1);
-            tableLayoutPanel5.Controls.Add(label7, 0, 1);
-            tableLayoutPanel5.Controls.Add(label4, 0, 0);
-            tableLayoutPanel5.Controls.Add(txtUsername, 1, 0);
-            tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 86);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 2;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(683, 77);
-            tableLayoutPanel5.TabIndex = 1;
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.50307F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.49693F));
+            this.tableLayoutPanel5.Controls.Add(this.cbUserType, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtUsername, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 74);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(584, 65);
+            this.tableLayoutPanel5.TabIndex = 1;
             // 
             // cbUserType
             // 
-            cbUserType.Dock = DockStyle.Fill;
-            cbUserType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbUserType.FormattingEnabled = true;
-            cbUserType.Items.AddRange(new object[] { "Empleado", "Administrador" });
-            cbUserType.Location = new Point(256, 38);
-            cbUserType.Margin = new Padding(0);
-            cbUserType.Name = "cbUserType";
-            cbUserType.Size = new Size(427, 23);
-            cbUserType.TabIndex = 3;
+            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUserType.FormattingEnabled = true;
+            this.cbUserType.Items.AddRange(new object[] {
+            "Empleado",
+            "Administrador"});
+            this.cbUserType.Location = new System.Drawing.Point(219, 32);
+            this.cbUserType.Margin = new System.Windows.Forms.Padding(0);
+            this.cbUserType.Name = "cbUserType";
+            this.cbUserType.Size = new System.Drawing.Size(365, 21);
+            this.cbUserType.TabIndex = 3;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label7.Location = new Point(3, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(250, 39);
-            label7.TabIndex = 2;
-            label7.Text = "Tipo de Usuario";
-            label7.TextAlign = ContentAlignment.TopRight;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 33);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Tipo de Usuario";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label3.Location = new Point(3, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(202, 42);
-            label3.TabIndex = 0;
-            label3.Text = "Apellido Materno";
-            label3.TextAlign = ContentAlignment.BottomLeft;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 35);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Apellido Materno";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label2.Location = new Point(3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(201, 42);
-            label2.TabIndex = 0;
-            label2.Text = "Apellido Paterno: ";
-            label2.TextAlign = ContentAlignment.BottomLeft;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Apellido Paterno: ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // tableLayoutPanel9
             // 
-            tableLayoutPanel9.ColumnCount = 1;
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel9.Controls.Add(label3, 0, 0);
-            tableLayoutPanel9.Controls.Add(txtMaterno, 0, 1);
-            tableLayoutPanel9.Dock = DockStyle.Fill;
-            tableLayoutPanel9.Location = new Point(472, 3);
-            tableLayoutPanel9.Name = "tableLayoutPanel9";
-            tableLayoutPanel9.RowCount = 2;
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel9.Size = new Size(208, 71);
-            tableLayoutPanel9.TabIndex = 2;
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.txtMaterno, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(404, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(177, 59);
+            this.tableLayoutPanel9.TabIndex = 2;
             // 
             // txtMaterno
             // 
-            txtMaterno.Dock = DockStyle.Fill;
-            txtMaterno.Location = new Point(3, 45);
-            txtMaterno.Name = "txtMaterno";
-            txtMaterno.Size = new Size(202, 23);
-            txtMaterno.TabIndex = 1;
+            this.txtMaterno.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMaterno.Location = new System.Drawing.Point(3, 38);
+            this.txtMaterno.Name = "txtMaterno";
+            this.txtMaterno.Size = new System.Drawing.Size(171, 20);
+            this.txtMaterno.TabIndex = 1;
             // 
             // txtPaterno
             // 
-            txtPaterno.Dock = DockStyle.Fill;
-            txtPaterno.Location = new Point(3, 45);
-            txtPaterno.Name = "txtPaterno";
-            txtPaterno.Size = new Size(201, 23);
-            txtPaterno.TabIndex = 1;
+            this.txtPaterno.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPaterno.Location = new System.Drawing.Point(3, 38);
+            this.txtPaterno.Name = "txtPaterno";
+            this.txtPaterno.Size = new System.Drawing.Size(170, 20);
+            this.txtPaterno.TabIndex = 1;
             // 
             // tableLayoutPanel8
             // 
-            tableLayoutPanel8.ColumnCount = 1;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Controls.Add(label2, 0, 0);
-            tableLayoutPanel8.Controls.Add(txtPaterno, 0, 1);
-            tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(259, 3);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 2;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel8.Size = new Size(207, 71);
-            tableLayoutPanel8.TabIndex = 1;
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txtPaterno, 0, 1);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(222, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(176, 59);
+            this.tableLayoutPanel8.TabIndex = 1;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("PT Sans", 11.9999981F, FontStyle.Bold);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(244, 42);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre(s): ";
-            label1.TextAlign = ContentAlignment.BottomLeft;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(207, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre(s): ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // txtName
             // 
-            txtName.Dock = DockStyle.Fill;
-            txtName.Location = new Point(3, 45);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(244, 23);
-            txtName.TabIndex = 1;
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.Location = new System.Drawing.Point(3, 38);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(207, 20);
+            this.txtName.TabIndex = 1;
             // 
             // tableLayoutPanel7
             // 
-            tableLayoutPanel7.ColumnCount = 1;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Controls.Add(label1, 0, 0);
-            tableLayoutPanel7.Controls.Add(txtName, 0, 1);
-            tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(3, 3);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 2;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel7.Size = new Size(250, 71);
-            tableLayoutPanel7.TabIndex = 0;
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.txtName, 0, 1);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(213, 59);
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
-            tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.5000038F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.2500019F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.2500019F));
-            tableLayoutPanel4.Controls.Add(tableLayoutPanel7, 0, 0);
-            tableLayoutPanel4.Controls.Add(tableLayoutPanel8, 1, 0);
-            tableLayoutPanel4.Controls.Add(tableLayoutPanel9, 2, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(683, 77);
-            tableLayoutPanel4.TabIndex = 0;
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 65);
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 0, 0);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel5, 0, 1);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 0, 2);
-            tableLayoutPanel3.Controls.Add(btnAddUser, 0, 3);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(3, 147);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 4;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Size = new Size(689, 332);
-            tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddUser, 0, 3);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 128);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(590, 287);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // pbPhoto
             // 
-            //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
-            pbPhoto.BackgroundImageLayout = ImageLayout.Zoom;
-            pbPhoto.Dock = DockStyle.Fill;
-            pbPhoto.Location = new Point(3, 3);
-            pbPhoto.Name = "pbPhoto";
-            pbPhoto.Size = new Size(132, 132);
-            pbPhoto.TabIndex = 0;
-            pbPhoto.TabStop = false;
+            this.pbPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPhoto.Location = new System.Drawing.Point(3, 3);
+            this.pbPhoto.Name = "pbPhoto";
+            this.pbPhoto.Size = new System.Drawing.Size(112, 113);
+            this.pbPhoto.TabIndex = 0;
+            this.pbPhoto.TabStop = false;
             // 
             // btnPhoto
             // 
-            btnPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnPhoto.Location = new Point(141, 94);
-            btnPhoto.Name = "btnPhoto";
-            btnPhoto.Size = new Size(123, 41);
-            btnPhoto.TabIndex = 1;
-            btnPhoto.Text = "Subir Foto de Perfil";
-            btnPhoto.UseVisualStyleBackColor = true;
-            btnPhoto.Click += btnPhoto_Click;
+            this.btnPhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPhoto.Location = new System.Drawing.Point(121, 80);
+            this.btnPhoto.Name = "btnPhoto";
+            this.btnPhoto.Size = new System.Drawing.Size(105, 36);
+            this.btnPhoto.TabIndex = 1;
+            this.btnPhoto.Text = "Subir Foto de Perfil";
+            this.btnPhoto.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.AllowDrop = true;
-            tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 138F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(btnCancelar, 2, 0);
-            tableLayoutPanel2.Controls.Add(pbPhoto, 0, 0);
-            tableLayoutPanel2.Controls.Add(btnPhoto, 1, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 3);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(689, 138);
-            tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.AllowDrop = true;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 301F));
+            this.tableLayoutPanel2.Controls.Add(this.btnCancelar, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pbPhoto, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnPhoto, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(590, 119);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // btnCancelar
             // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCancelar.BackColor = Color.White;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnCancelar.Location = new Point(563, 94);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(123, 41);
-            btnCancelar.TabIndex = 2;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.White;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.Location = new System.Drawing.Point(482, 80);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(105, 36);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 1);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
-            tableLayoutPanel1.Size = new Size(695, 482);
-            tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(596, 418);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // addUserPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(243, 243, 224);
-            Controls.Add(tableLayoutPanel1);
-            Name = "addUserPage";
-            Size = new Size(695, 482);
-            tableLayoutPanel11.ResumeLayout(false);
-            tableLayoutPanel11.PerformLayout();
-            tableLayoutPanel10.ResumeLayout(false);
-            tableLayoutPanel10.PerformLayout();
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel5.PerformLayout();
-            tableLayoutPanel9.ResumeLayout(false);
-            tableLayoutPanel9.PerformLayout();
-            tableLayoutPanel8.ResumeLayout(false);
-            tableLayoutPanel8.PerformLayout();
-            tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel7.PerformLayout();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbPhoto).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "addUserPage";
+            this.Size = new System.Drawing.Size(596, 418);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

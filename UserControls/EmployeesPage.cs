@@ -1,5 +1,4 @@
-﻿using Calculadora_Areas_Perimetros;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
+using WindowsFormsApp1.ServiceReference2;
 
 namespace PuntuApp.UserControls
 {
@@ -17,13 +18,13 @@ namespace PuntuApp.UserControls
         Color btnSelectedtColor = Color.FromArgb(203, 220, 235);
         private NavigationControl navigationControl; 
         private string username;
-        private string role; // Added role variable
+        private string role;
         private DataTable employeesData;
-        public EmployeesPage(NavigationControl navigationControl, string username, string role) // Added role parameter
+        public EmployeesPage(NavigationControl navigationControl, string username, string role)
         {
             InitializeComponent();
             this.navigationControl = navigationControl;
-            this.role = role; // Initialize role
+            this.role = role;
             //LoadEmployees();
             HighlightButton(btnID);
             btnID.Click += (s, e) => OrdenarColumna("ID");
@@ -35,6 +36,7 @@ namespace PuntuApp.UserControls
             FilterSelection.SelectedIndexChanged += FilterSelection_SelectedIndexChanged;
             txtFilter.TextChanged += txtFilter_TextChanged;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            LoadUsers();
         }
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -43,7 +45,7 @@ namespace PuntuApp.UserControls
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 int userId = Convert.ToInt32(row.Cells["ID"].Value);
                 var editPage = navigationControl.GetControl<editUserPage>(4);
-                //editPage.SetUserData(userId);
+                
                 navigationControl.Display(4);
             }
         }
@@ -163,6 +165,65 @@ namespace PuntuApp.UserControls
             catch (Exception ex)
             {
                 MessageBox.Show("Error al añadir filas de prueba: " + ex.Message);
+            }
+        }
+        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
+        public void LoadUsers()
+        {
+            try
+            {
+                
+                var client = new UserServiceClient();
+                string jsonResponse = client.getUsersWithAttendance();
+
+                // Parsear el JSON
+                JArray userDataArray = JArray.Parse(jsonResponse);
+                DataTable userTable = new DataTable();
+
+                // Crear las columnas
+                userTable.Columns.Add("Username", typeof(string));
+                userTable.Columns.Add("Nombre", typeof(string));
+                userTable.Columns.Add("Rol", typeof(string));
+                userTable.Columns.Add("Última Entrada", typeof(string));
+                userTable.Columns.Add("Última Salida", typeof(string));
+                userTable.Columns.Add("Estado", typeof(string));
+
+                // Llenar las filas
+                foreach (var user in userDataArray)
+                {
+                    string username = (string)user["username"];
+                    string name = (string)user["name"];
+                    string rol = (string)user["rol"];
+                    string estado = (string)user["estado"];
+                    string lastEntry = $"{user["lastEntryDate"]} {user["lastEntryTime"]}";
+                    string lastExit = $"{user["lastExitDate"]} {user["lastExitTime"]}";
+
+                    userTable.Rows.Add(username, name, rol, lastEntry, lastExit, estado);
+                }
+
+                // Asignar la tabla al DataGridView
+                dataGridView1.DataSource = userTable;
+
+                // Configurar encabezados y anchos
+                dataGridView1.Columns["Username"].HeaderText = "Nombre de Usuario";
+                dataGridView1.Columns["Nombre"].HeaderText = "Nombre";
+                dataGridView1.Columns["Rol"].HeaderText = "Rol";
+                dataGridView1.Columns["Última Entrada"].HeaderText = "Última Entrada";
+                dataGridView1.Columns["Última Salida"].HeaderText = "Última Salida";
+                dataGridView1.Columns["Estado"].HeaderText = "Estado";
+
+                // Ajustar ancho de las columnas
+
+                dataGridView1.Columns["Nombre"].FillWeight = 26f;
+                dataGridView1.Columns["Username"].FillWeight = 17f;
+                dataGridView1.Columns["Rol"].FillWeight = 10f;
+                dataGridView1.Columns["Última Entrada"].FillWeight = 18f;
+                dataGridView1.Columns["Última Salida"].FillWeight = 18f;
+                dataGridView1.Columns["Estado"].FillWeight = 10f;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los usuarios: " + ex.Message);
             }
         }
         //public void LoadEmployees()
