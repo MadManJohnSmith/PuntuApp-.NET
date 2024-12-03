@@ -36,25 +36,25 @@ namespace PuntuApp.UserControls
                 }
             }
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            // Limpiar el formulario
-            txtName.Clear();
-            txtPaterno.Clear();
-            txtMaterno.Clear();
-            txtUsername.Clear();
-            txtPassword.Clear();
-            txtPassVeri.Clear();
-            cbUserType.SelectedIndex = 0;
-            //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_133E87_FILL0_wght400_GRAD0_opsz24;
+        //private void btnCancelar_Click(object sender, EventArgs e)
+        //{
+        //    // Limpiar el formulario
+        //    txtName.Clear();
+        //    txtPaterno.Clear();
+        //    txtMaterno.Clear();
+        //    txtUsername.Clear();
+        //    txtPassword.Clear();
+        //    txtPassVeri.Clear();
+        //    cbUserType.SelectedIndex = 0;
+        //    //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_133E87_FILL0_wght400_GRAD0_opsz24;
 
-            // Regresar a la página de empleados
-            navigationControl.Display(1);
+        //    // Regresar a la página de empleados
+        //    navigationControl.Display(1);
 
-            // Actualizar la tabla de empleados
-            var employeesPage = navigationControl.GetControl<EmployeesPage>(1);
-            //employeesPage.LoadEmployees();
-        }
+        //    // Actualizar la tabla de empleados
+        //    var employeesPage = navigationControl.GetControl<EmployeesPage>(1);
+        //    //employeesPage.LoadEmployees();
+        //}
         //private void btnAddUser_Click(object sender, EventArgs e)
         //{
         //    // Validaciones

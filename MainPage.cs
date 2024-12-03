@@ -40,9 +40,9 @@ namespace PuntuApp
 
             List<UserControl> userControls = new List<UserControl>()
             {
-                new HomePage(username, role), // Updated instantiation with parameters
+                new HomePage(username, role),//0
                 new EmployeesPage(navigationControl, username, role),//1
-                new UserPage(username, role), // Updated instantiation with parameters
+                new UserPage(username, role), //2
                 new addUserPage(navigationControl, username, role),//3
                 new editUserPage(navigationControl, username, role)//4
             };

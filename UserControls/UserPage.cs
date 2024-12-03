@@ -15,12 +15,11 @@ namespace PuntuApp.UserControls
         private string username;
         private string role;
 
-        public UserPage(string username, string role) // Modified constructor
+        public UserPage(string username, string role)
         {
             InitializeComponent();
             this.username = username;
             this.role = role;
-            // ...additional initialization if needed...
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

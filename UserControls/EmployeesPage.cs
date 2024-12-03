@@ -245,7 +245,7 @@ namespace PuntuApp.UserControls
             if (employeesData != null)
             {
                 string selectedField = "";
-                string filterText = txtFilter.Text.Replace("'", "''"); // Escape single quotes
+                string filterText = txtFilter.Text.Replace("'", "''");
 
                 switch (FilterSelection.SelectedItem?.ToString())
                 {

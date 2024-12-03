@@ -33,9 +33,7 @@ namespace PuntuApp
                 string jsonResponse = client.validarUsuario(username, password);
                 if (jsonResponse != null)
                 {
-                    // Parse the JSON response
                     var loginData = JsonConvert.DeserializeObject<LoginData>(jsonResponse);
-                    // Pass username and role to MainPage
                     this.Hide();
                     MainPage home = new MainPage(loginData.username, loginData.rol);
                     home.Show();
@@ -56,7 +54,6 @@ namespace PuntuApp
             Application.Exit();
         }
         
-        // Define a class to deserialize the JSON response
         private class LoginData
         {
             public string username { get; set; }
