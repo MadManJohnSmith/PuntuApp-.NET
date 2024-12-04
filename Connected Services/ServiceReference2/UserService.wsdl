@@ -17,6 +17,24 @@
   <message name="getUsersWithAttendanceResponse">
     <part name="parameters" element="tns:getUsersWithAttendanceResponse" />
   </message>
+  <message name="updateUser">
+    <part name="parameters" element="tns:updateUser" />
+  </message>
+  <message name="updateUserResponse">
+    <part name="parameters" element="tns:updateUserResponse" />
+  </message>
+  <message name="deleteUser">
+    <part name="parameters" element="tns:deleteUser" />
+  </message>
+  <message name="deleteUserResponse">
+    <part name="parameters" element="tns:deleteUserResponse" />
+  </message>
+  <message name="getUserDetailsJSON">
+    <part name="parameters" element="tns:getUserDetailsJSON" />
+  </message>
+  <message name="getUserDetailsJSONResponse">
+    <part name="parameters" element="tns:getUserDetailsJSONResponse" />
+  </message>
   <portType name="UserService">
     <operation name="getUserDetails">
       <input wsam:Action="http://CompLogin/UserService/getUserDetailsRequest" message="tns:getUserDetails" />
@@ -25,6 +43,18 @@
     <operation name="getUsersWithAttendance">
       <input wsam:Action="http://CompLogin/UserService/getUsersWithAttendanceRequest" message="tns:getUsersWithAttendance" />
       <output wsam:Action="http://CompLogin/UserService/getUsersWithAttendanceResponse" message="tns:getUsersWithAttendanceResponse" />
+    </operation>
+    <operation name="updateUser">
+      <input wsam:Action="http://CompLogin/UserService/updateUserRequest" message="tns:updateUser" />
+      <output wsam:Action="http://CompLogin/UserService/updateUserResponse" message="tns:updateUserResponse" />
+    </operation>
+    <operation name="deleteUser">
+      <input wsam:Action="http://CompLogin/UserService/deleteUserRequest" message="tns:deleteUser" />
+      <output wsam:Action="http://CompLogin/UserService/deleteUserResponse" message="tns:deleteUserResponse" />
+    </operation>
+    <operation name="getUserDetailsJSON">
+      <input wsam:Action="http://CompLogin/UserService/getUserDetailsJSONRequest" message="tns:getUserDetailsJSON" />
+      <output wsam:Action="http://CompLogin/UserService/getUserDetailsJSONResponse" message="tns:getUserDetailsJSONResponse" />
     </operation>
   </portType>
   <binding name="UserServicePortBinding" type="tns:UserService">
@@ -39,6 +69,33 @@
       </output>
     </operation>
     <operation name="getUsersWithAttendance">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getUserDetailsJSON">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

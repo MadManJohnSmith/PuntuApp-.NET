@@ -32,6 +32,33 @@ namespace WindowsFormsApp1.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUsersWithAttendanceRequest", ReplyAction="http://CompLogin/UserService/getUsersWithAttendanceResponse")]
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse> getUsersWithAttendanceAsync(WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/updateUserRequest", ReplyAction="http://CompLogin/UserService/updateUserResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.updateUserResponse updateUser(WindowsFormsApp1.ServiceReference2.updateUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/updateUserRequest", ReplyAction="http://CompLogin/UserService/updateUserResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.updateUserResponse> updateUserAsync(WindowsFormsApp1.ServiceReference2.updateUserRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/deleteUserRequest", ReplyAction="http://CompLogin/UserService/deleteUserResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.deleteUserResponse deleteUser(WindowsFormsApp1.ServiceReference2.deleteUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/deleteUserRequest", ReplyAction="http://CompLogin/UserService/deleteUserResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.deleteUserResponse> deleteUserAsync(WindowsFormsApp1.ServiceReference2.deleteUserRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUserDetailsJSONRequest", ReplyAction="http://CompLogin/UserService/getUserDetailsJSONResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse getUserDetailsJSON(WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUserDetailsJSONRequest", ReplyAction="http://CompLogin/UserService/getUserDetailsJSONResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse> getUserDetailsJSONAsync(WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -94,6 +121,119 @@ namespace WindowsFormsApp1.ServiceReference2 {
         }
         
         public getUsersWithAttendanceResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="updateUser", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class updateUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public updateUserRequest() {
+        }
+        
+        public updateUserRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="updateUserResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class updateUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public updateUserResponse() {
+        }
+        
+        public updateUserResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteUser", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class deleteUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public deleteUserRequest() {
+        }
+        
+        public deleteUserRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteUserResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class deleteUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public deleteUserResponse() {
+        }
+        
+        public deleteUserResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUserDetailsJSON", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getUserDetailsJSONRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public getUserDetailsJSONRequest() {
+        }
+        
+        public getUserDetailsJSONRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUserDetailsJSONResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getUserDetailsJSONResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public getUserDetailsJSONResponse() {
+        }
+        
+        public getUserDetailsJSONResponse(string @return) {
             this.@return = @return;
         }
     }
@@ -167,6 +307,77 @@ namespace WindowsFormsApp1.ServiceReference2 {
         public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse> getUsersWithAttendanceAsync() {
             WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest inValue = new WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest();
             return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUsersWithAttendanceAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.updateUserResponse WindowsFormsApp1.ServiceReference2.UserService.updateUser(WindowsFormsApp1.ServiceReference2.updateUserRequest request) {
+            return base.Channel.updateUser(request);
+        }
+        
+        public string updateUser(string arg0, string arg1) {
+            WindowsFormsApp1.ServiceReference2.updateUserRequest inValue = new WindowsFormsApp1.ServiceReference2.updateUserRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            WindowsFormsApp1.ServiceReference2.updateUserResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).updateUser(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.updateUserResponse> WindowsFormsApp1.ServiceReference2.UserService.updateUserAsync(WindowsFormsApp1.ServiceReference2.updateUserRequest request) {
+            return base.Channel.updateUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.updateUserResponse> updateUserAsync(string arg0, string arg1) {
+            WindowsFormsApp1.ServiceReference2.updateUserRequest inValue = new WindowsFormsApp1.ServiceReference2.updateUserRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).updateUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.deleteUserResponse WindowsFormsApp1.ServiceReference2.UserService.deleteUser(WindowsFormsApp1.ServiceReference2.deleteUserRequest request) {
+            return base.Channel.deleteUser(request);
+        }
+        
+        public string deleteUser(string arg0) {
+            WindowsFormsApp1.ServiceReference2.deleteUserRequest inValue = new WindowsFormsApp1.ServiceReference2.deleteUserRequest();
+            inValue.arg0 = arg0;
+            WindowsFormsApp1.ServiceReference2.deleteUserResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).deleteUser(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.deleteUserResponse> WindowsFormsApp1.ServiceReference2.UserService.deleteUserAsync(WindowsFormsApp1.ServiceReference2.deleteUserRequest request) {
+            return base.Channel.deleteUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.deleteUserResponse> deleteUserAsync(string arg0) {
+            WindowsFormsApp1.ServiceReference2.deleteUserRequest inValue = new WindowsFormsApp1.ServiceReference2.deleteUserRequest();
+            inValue.arg0 = arg0;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).deleteUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse WindowsFormsApp1.ServiceReference2.UserService.getUserDetailsJSON(WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest request) {
+            return base.Channel.getUserDetailsJSON(request);
+        }
+        
+        public string getUserDetailsJSON(string arg0) {
+            WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest inValue = new WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest();
+            inValue.arg0 = arg0;
+            WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUserDetailsJSON(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse> WindowsFormsApp1.ServiceReference2.UserService.getUserDetailsJSONAsync(WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest request) {
+            return base.Channel.getUserDetailsJSONAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse> getUserDetailsJSONAsync(string arg0) {
+            WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest inValue = new WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest();
+            inValue.arg0 = arg0;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUserDetailsJSONAsync(inValue);
         }
     }
 }

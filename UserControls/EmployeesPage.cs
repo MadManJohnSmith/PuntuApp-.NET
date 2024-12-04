@@ -17,7 +17,6 @@ namespace PuntuApp.UserControls
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedtColor = Color.FromArgb(203, 220, 235);
         private NavigationControl navigationControl;
-        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
         private string username;
         private string role;
         private DataTable employeesData;
@@ -26,77 +25,17 @@ namespace PuntuApp.UserControls
             InitializeComponent();
             this.navigationControl = navigationControl;
             this.role = role;
-            //LoadEmployees();
             HighlightButton(btnID);
-            btnID.Click += (s, e) => OrdenarColumna("ID");
-            btnNombre.Click += (s, e) => OrdenarColumna("name");
-            btnEstado.Click += (s, e) => OrdenarColumna("Username");
-            btnEntrada.Click += (s, e) => OrdenarColumna("lastEntry");
-            btnSalida.Click += (s, e) => OrdenarColumna("lastExit");
+            btnID.Click += (s, e) => OrdenarColumna("Username");
+            btnNombre.Click += (s, e) => OrdenarColumna("Nombre");
+            btnEstado.Click += (s, e) => OrdenarColumna("Rol");
+            btnEntrada.Click += (s, e) => OrdenarColumna("Última Entrada");
+            btnSalida.Click += (s, e) => OrdenarColumna("Última Salida");
             searchBar.TextChanged += searchBar_TextChanged;
-            FilterSelection.SelectedIndexChanged += FilterSelection_SelectedIndexChanged;
-            txtFilter.TextChanged += txtFilter_TextChanged;
+            //FilterSelection.SelectedIndexChanged += FilterSelection_SelectedIndexChanged;
+            //txtFilter.TextChanged += txtFilter_TextChanged;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
             LoadUsers();
-        }
-        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int userId = Convert.ToInt32(row.Cells["ID"].Value);
-                var editPage = navigationControl.GetControl<editUserPage>(4);
-                
-                navigationControl.Display(4);
-            }
-        }
-        private void OrdenarColumna(string columnName)
-        {
-            try
-            {
-                // Verificar si la columna existe en el DataGridView
-                if (dataGridView1.Columns[columnName] != null)
-                {
-                    // Alternar entre Ascendente y Descendente si ya está ordenada
-                    var sortDirection = dataGridView1.SortOrder == SortOrder.Ascending ?
-                        System.ComponentModel.ListSortDirection.Descending :
-                        System.ComponentModel.ListSortDirection.Ascending;
-
-                    dataGridView1.Sort(dataGridView1.Columns[columnName], sortDirection);
-                }
-                else
-                {
-                    MessageBox.Show($"La columna '{columnName}' no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al ordenar la columna '{columnName}': {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void btnSalida_Click(object sender, EventArgs e)
-        {
-            HighlightButton((Button)sender);
-        }
-
-        private void btnEntrada_Click(object sender, EventArgs e)
-        {
-            HighlightButton((Button)sender);
-        }
-
-        private void btnEstado_Click(object sender, EventArgs e)
-        {
-            HighlightButton((Button)sender);
-        }
-
-        private void btnNombre_Click(object sender, EventArgs e)
-        {
-            HighlightButton((Button)sender);
-        }
-
-        private void btnID_Click(object sender, EventArgs e)
-        {
-            HighlightButton((Button)sender);
         }
 
         private void HighlightButton(Button clickedButton)
@@ -110,15 +49,9 @@ namespace PuntuApp.UserControls
         }
         private void EmployeesPage_Load(object sender, EventArgs e)
         {
-            // Cambiar el color de la fuente del DataGridView a negro
             dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
         }
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            var editPage = navigationControl.GetControl<editUserPage>(4);
-            editPage.ClearForm();
-            navigationControl.Display(3);
-        }        
+     
         public void LoadUsers()
         {
             try
@@ -127,11 +60,9 @@ namespace PuntuApp.UserControls
                 var client = new UserServiceClient();
                 string jsonResponse = client.getUsersWithAttendance();
 
-                // Parsear el JSON
                 JArray userDataArray = JArray.Parse(jsonResponse);
                 DataTable userTable = new DataTable();
 
-                // Crear las columnas
                 userTable.Columns.Add("Username", typeof(string));
                 userTable.Columns.Add("Nombre", typeof(string));
                 userTable.Columns.Add("Rol", typeof(string));
@@ -139,7 +70,6 @@ namespace PuntuApp.UserControls
                 userTable.Columns.Add("Última Salida", typeof(string));
                 userTable.Columns.Add("Estado", typeof(string));
 
-                // Llenar las filas
                 foreach (var user in userDataArray)
                 {
                     String username = (string)user["username"];
@@ -152,18 +82,14 @@ namespace PuntuApp.UserControls
                     userTable.Rows.Add(username, name, rol, lastEntry, lastExit, estado);
                 }
 
-                // Asignar la tabla al DataGridView
                 dataGridView1.DataSource = userTable;
 
-                // Configurar encabezados y anchos
                 dataGridView1.Columns["Username"].HeaderText = "Nombre de Usuario";
                 dataGridView1.Columns["Nombre"].HeaderText = "Nombre";
                 dataGridView1.Columns["Rol"].HeaderText = "Rol";
                 dataGridView1.Columns["Última Entrada"].HeaderText = "Última Entrada";
                 dataGridView1.Columns["Última Salida"].HeaderText = "Última Salida";
                 dataGridView1.Columns["Estado"].HeaderText = "Estado";
-
-                // Ajustar ancho de las columnas
 
                 dataGridView1.Columns["Nombre"].FillWeight = 22f;
                 dataGridView1.Columns["Username"].FillWeight = 17f;
@@ -177,55 +103,21 @@ namespace PuntuApp.UserControls
                 MessageBox.Show("Error al cargar los usuarios: " + ex.Message);
             }
         }
-        //public void LoadEmployees()
-        //{
-        //    try
-        //    {
-        //        if (role == "Admin")
-        //        {
-        //            // Obtener datos de empleados desde la base de datos
-        //            //employeesData = databaseHelper.GetUsersWithAttendance();
-        //        }
-        //        else
-        //        {
-        //            // Load limited data
-        //        }
 
-        //        // Agregar la columna "Estado" calculada al DataTable
-        //        employeesData.Columns.Add("Estado", typeof(string));
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                string userEdit = Convert.ToString(row.Cells["Username"].Value);
+                var editPage = navigationControl.GetControl<editUserPage>(4);
 
-        //        foreach (DataRow row in employeesData.Rows)
-        //        {
-        //            DateTime? lastEntry = row["lastEntry"] != DBNull.Value ? (DateTime?)row["lastEntry"] : null;
-        //            DateTime? lastExit = row["lastExit"] != DBNull.Value ? (DateTime?)row["lastExit"] : null;
+                editPage.SetUserToEdit(userEdit);
 
-        //            // Determinar el estado en función de la última entrada y salida
-        //            string state = (lastEntry.HasValue && (!lastExit.HasValue || lastEntry > lastExit)) ? "Activo" : "Offline";
-        //            row["Estado"] = state;
-        //        }
+                navigationControl.Display(4);
+            }
+        }
 
-        //        // Configurar las columnas del DataGridView
-        //        dataGridView1.DataSource = employeesData;
-        //        dataGridView1.Columns["ID"].HeaderText = "ID";
-        //        dataGridView1.Columns["name"].HeaderText = "Nombre";
-        //        dataGridView1.Columns["Username"].HeaderText = "Nombre de Usuario";
-        //        dataGridView1.Columns["Estado"].HeaderText = "Estado";
-        //        dataGridView1.Columns["lastEntry"].HeaderText = "Última Entrada";
-        //        dataGridView1.Columns["lastExit"].HeaderText = "Última Salida";
-
-        //        // Ajustar ancho de las columnas
-        //        dataGridView1.Columns["ID"].FillWeight = 4f;
-        //        dataGridView1.Columns["name"].FillWeight = 26f;
-        //        dataGridView1.Columns["Username"].FillWeight = 17f;
-        //        dataGridView1.Columns["lastEntry"].FillWeight = 18f;
-        //        dataGridView1.Columns["lastExit"].FillWeight = 18f;
-        //        dataGridView1.Columns["Estado"].FillWeight = 10f;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al cargar los empleados: " + ex.Message);
-        //    }
-        //}
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             if (employeesData != null)
@@ -282,11 +174,65 @@ namespace PuntuApp.UserControls
                     dv.RowFilter = filterExpression;
                     dataGridView1.DataSource = dv;
                 }
-    }
-                else
-                {
-                    dataGridView1.DataSource = employeesData;
-                }
+            }
+            else
+            {
+                dataGridView1.DataSource = employeesData;
             }
         }
+
+        private void btnAddUser_Click_1(object sender, EventArgs e)
+        {
+            var editPage = navigationControl.GetControl<editUserPage>(4);
+            editPage.ClearForm();
+            navigationControl.Display(3);
+        }
+
+        private void btnID_Click_1(object sender, EventArgs e)
+        {
+            HighlightButton((Button)sender);
+        }
+
+        private void btnNombre_Click_1(object sender, EventArgs e)
+        {
+            HighlightButton((Button)sender);
+        }
+
+        private void btnEstado_Click_1(object sender, EventArgs e)
+        {
+            HighlightButton((Button)sender);
+        }
+
+        private void btnEntrada_Click_1(object sender, EventArgs e)
+        {
+            HighlightButton((Button)sender);
+        }
+
+        private void btnSalida_Click_1(object sender, EventArgs e)
+        {
+            HighlightButton((Button)sender);
+        }
+        private void OrdenarColumna(string columnName)
+        {
+            try
+            {
+                if (dataGridView1.Columns[columnName] != null)
+                {
+                    var sortDirection = dataGridView1.SortOrder == SortOrder.Ascending ?
+                        System.ComponentModel.ListSortDirection.Descending :
+                        System.ComponentModel.ListSortDirection.Ascending;
+
+                    dataGridView1.Sort(dataGridView1.Columns[columnName], sortDirection);
+                }
+                else
+                {
+                    MessageBox.Show($"La columna '{columnName}' no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al ordenar la columna '{columnName}': {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+        }
+    }
 }

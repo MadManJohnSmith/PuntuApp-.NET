@@ -2,13 +2,8 @@ using Calculadora_Areas_Perimetros;
 using PuntuApp.UserControls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.ServiceReference2;
 
@@ -38,7 +33,6 @@ namespace PuntuApp
         }
         private void InitializeNavigationControl()
         {
-
             navigationControl = new NavigationControl(new List<UserControl>(), panel1);
 
             List<UserControl> userControls = new List<UserControl>()
@@ -63,30 +57,7 @@ namespace PuntuApp
             { btnHome, btnEmpleados, btnUsuario};
             navigationButtons = new NavigationButtons(buttons, btnDefaultColor, btnSelectedtColor);
         }
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            if (navigationControl != null)
-            {
-                navigationControl.Display(0);
-                navigationButtons.Highlight(btnHome);
-            }
-        }
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            if (navigationControl != null)
-            {
-                navigationControl.Display(1);
-                navigationButtons.Highlight(btnEmpleados);
-            }
-        }
-        private void btnUsuario_Click(object sender, EventArgs e)
-        {
-            if (navigationControl != null)
-            {
-                navigationControl.Display(2);
-                navigationButtons.Highlight(btnUsuario);
-            }
-        }
+
         public void LoadUserDetails(string username)
         {
             try
@@ -94,11 +65,11 @@ namespace PuntuApp
                 var client = new UserServiceClient();
                 string[] userDetails = client.getUserDetails(username);
 
-                if (userDetails != null && userDetails.Length >= 4) // Verifica que la lista tenga al menos 4 elementos
+                if (userDetails != null && userDetails.Length >= 4)
                 {
-                    // Asignar valores a los Labels
-                    lblState.Text = "Estado: " + userDetails[3]; // Índice 3 corresponde a "estado"
-                    lblUserInfo.Text = "Usuario: " + userDetails[0] + "\n" + userDetails[2]; // Índices 0 (username) y 2 (rol)
+                    
+                    lblState.Text = "Estado: " + userDetails[3];
+                    lblUserInfo.Text = "Usuario: " + userDetails[0] + "\n" + userDetails[2];
                 }
                 else
                 {
@@ -116,35 +87,13 @@ namespace PuntuApp
                         pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los detalles del usuario: " + ex.Message);
             }
         }
-        //private void UpdateUserInfo(int userId)
-        //{
-        //    DatabaseHelper dbHelper = new DatabaseHelper(connectionString);
-        //    DataRow userRow = dbHelper.GetUserById(userId);
 
-        //    if (userRow != null)
-        //    {
-        //        string fullName = userRow["name"].ToString();
-        //        string username = userRow["Username"].ToString();
-        //        DateTime? lastEntry = userRow["lastEntry"] != DBNull.Value ? (DateTime?)userRow["lastEntry"] : null;
-        //        DateTime? lastExit = userRow["lastExit"] != DBNull.Value ? (DateTime?)userRow["lastExit"] : null;
-
-        //        string state = (lastEntry.HasValue && (!lastExit.HasValue || lastEntry > lastExit)) ? "Activo" : "Offline";
-
-        //        lblUserInfo.Text = $"Nombre: {fullName}\nNombre de Usuario: {username}\nID: {userId}";
-        //        lblState.Text = $"Estado: {state}";
-        //    }
-        //}
-        private void MainPage_Load(object sender, EventArgs e)
-        {
-
-        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -166,6 +115,33 @@ namespace PuntuApp
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void btnEmpleados_Click_1(object sender, EventArgs e)
+        {
+            if (navigationControl != null)
+            {
+                navigationControl.Display(1);
+                navigationButtons.Highlight(btnEmpleados);
+            }
+        }
+
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+            if (navigationControl != null)
+            {
+                navigationControl.Display(0);
+                navigationButtons.Highlight(btnHome);
+            }
+        }
+
+        private void btnUsuario_Click_1(object sender, EventArgs e)
+        {
+            if (navigationControl != null)
+            {
+                navigationControl.Display(2);
+                navigationButtons.Highlight(btnUsuario);
             }
         }
     }

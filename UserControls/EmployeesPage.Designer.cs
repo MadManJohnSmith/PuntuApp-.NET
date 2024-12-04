@@ -79,7 +79,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(596, 418);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(590, 81);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(590, 89);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -107,11 +107,11 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel4.Controls.Add(this.searchBar, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 43);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 47);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 35);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 39);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // searchBar
@@ -122,7 +122,7 @@ namespace PuntuApp.UserControls
             this.searchBar.Location = new System.Drawing.Point(416, 3);
             this.searchBar.Multiline = true;
             this.searchBar.Name = "searchBar";
-            this.searchBar.Size = new System.Drawing.Size(165, 29);
+            this.searchBar.Size = new System.Drawing.Size(165, 33);
             this.searchBar.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -139,7 +139,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(407, 29);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(407, 33);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // FilterSelection
@@ -164,7 +164,7 @@ namespace PuntuApp.UserControls
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 29);
+            this.label1.Size = new System.Drawing.Size(45, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar Por:";
             // 
@@ -189,7 +189,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 34);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 38);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // btnAddUser
@@ -198,18 +198,19 @@ namespace PuntuApp.UserControls
             this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAddUser.Location = new System.Drawing.Point(416, 3);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(165, 28);
+            this.btnAddUser.Size = new System.Drawing.Size(165, 32);
             this.btnAddUser.TabIndex = 0;
             this.btnAddUser.Text = "+Anadir Usuario";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click_1);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 6;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
@@ -223,7 +224,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(407, 28);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(407, 32);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label2
@@ -233,7 +234,7 @@ namespace PuntuApp.UserControls
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 28);
+            this.label2.Size = new System.Drawing.Size(54, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ordenar Por:";
             // 
@@ -242,60 +243,65 @@ namespace PuntuApp.UserControls
             this.btnID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnID.FlatAppearance.BorderSize = 0;
             this.btnID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnID.Location = new System.Drawing.Point(54, 3);
+            this.btnID.Location = new System.Drawing.Point(63, 3);
             this.btnID.Name = "btnID";
-            this.btnID.Size = new System.Drawing.Size(28, 22);
+            this.btnID.Size = new System.Drawing.Size(63, 26);
             this.btnID.TabIndex = 1;
-            this.btnID.Text = "ID";
+            this.btnID.Text = "Username";
             this.btnID.UseVisualStyleBackColor = true;
+            this.btnID.Click += new System.EventHandler(this.btnID_Click_1);
             // 
             // btnNombre
             // 
             this.btnNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNombre.FlatAppearance.BorderSize = 0;
             this.btnNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNombre.Location = new System.Drawing.Point(88, 3);
+            this.btnNombre.Location = new System.Drawing.Point(132, 3);
             this.btnNombre.Name = "btnNombre";
-            this.btnNombre.Size = new System.Drawing.Size(63, 22);
+            this.btnNombre.Size = new System.Drawing.Size(63, 26);
             this.btnNombre.TabIndex = 2;
             this.btnNombre.Text = "Nombre";
             this.btnNombre.UseVisualStyleBackColor = true;
+            this.btnNombre.Click += new System.EventHandler(this.btnNombre_Click_1);
             // 
             // btnEstado
             // 
             this.btnEstado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEstado.FlatAppearance.BorderSize = 0;
             this.btnEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstado.Location = new System.Drawing.Point(157, 3);
+            this.btnEstado.Location = new System.Drawing.Point(201, 3);
             this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(63, 22);
+            this.btnEstado.Size = new System.Drawing.Size(49, 26);
             this.btnEstado.TabIndex = 3;
-            this.btnEstado.Text = "Estado";
+            this.btnEstado.Text = "Rol";
             this.btnEstado.UseVisualStyleBackColor = true;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click_1);
             // 
             // btnEntrada
             // 
             this.btnEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEntrada.FlatAppearance.BorderSize = 0;
             this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrada.Location = new System.Drawing.Point(226, 3);
+            this.btnEntrada.Location = new System.Drawing.Point(256, 3);
             this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(86, 22);
+            this.btnEntrada.Size = new System.Drawing.Size(71, 26);
             this.btnEntrada.TabIndex = 4;
-            this.btnEntrada.Text = "Hora de Entrada";
+            this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click_1);
             // 
             // btnSalida
             // 
             this.btnSalida.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSalida.FlatAppearance.BorderSize = 0;
             this.btnSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalida.Location = new System.Drawing.Point(318, 3);
+            this.btnSalida.Location = new System.Drawing.Point(333, 3);
             this.btnSalida.Name = "btnSalida";
-            this.btnSalida.Size = new System.Drawing.Size(86, 22);
+            this.btnSalida.Size = new System.Drawing.Size(71, 26);
             this.btnSalida.TabIndex = 5;
-            this.btnSalida.Text = "Hora de Salida";
+            this.btnSalida.Text = "Salida";
             this.btnSalida.UseVisualStyleBackColor = true;
+            this.btnSalida.Click += new System.EventHandler(this.btnSalida_Click_1);
             // 
             // dataGridView1
             // 
@@ -306,12 +312,12 @@ namespace PuntuApp.UserControls
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(590, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(590, 317);
             this.dataGridView1.TabIndex = 1;
             // 
             // EmployeesPage

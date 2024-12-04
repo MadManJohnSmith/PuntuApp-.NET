@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.ServiceReference2;
 
 namespace PuntuApp.UserControls
 {
     public partial class editUserPage : UserControl
     {
         private NavigationControl navigationControl;
-        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
         private string username;
         private string role;
+        private string userToEdit;
         private bool isEditing = false;
+        private JObject userDetails;
 
         public editUserPage(NavigationControl navigationControl, string username, string role)
         {
@@ -27,42 +30,53 @@ namespace PuntuApp.UserControls
             this.role = role;
             cbUserType.SelectedIndex = 0;
         }
-        //public void SetUserData(int userId)
-        //{
-        //    this.userId = userId;
-        //    isEditing = true;
 
-        //    DataRow userRow = dbHelper.GetUserById(userId);
+        public void SetUserToEdit(string userToEdit)
+        {
+            this.userToEdit = userToEdit;
+            isEditing = true;
+            LoadUserData();
+        }
 
-        //    if (userRow != null)
-        //    {
+        private void LoadUserData()
+        {
+            try
+            {
+                var client = new UserServiceClient();
+                string jsonResponse = client.getUserDetailsJSON(userToEdit);
 
-        //        txtName.Text = userRow["nombre"].ToString();
+                userDetails = JObject.Parse(jsonResponse);
 
-        //        txtUsername.Text = userRow["username"].ToString();
+                if (userDetails.ContainsKey("error"))
+                {
+                    MessageBox.Show("Error al obtener los detalles del usuario: " + (string)userDetails["error"]);
+                    return;
+                }
 
-        //        string roleName = dbHelper.GetUserRole(userId);
-        //        cbUserType.SelectedItem = roleName ?? "Empleado";
+                txtUsername.Text = (string)userDetails["username"];
+                txtName.Text = (string)userDetails["name"];
+                cbUserType.SelectedItem = (string)userDetails["rol"];
 
-        //        if (userRow["foto"] != DBNull.Value)
-        //        {
-        //            byte[] photoBytes = (byte[])userRow["foto"];
-        //            using (var ms = new MemoryStream(photoBytes))
-        //            {
-        //                pbPhoto.BackgroundImage = Image.FromStream(ms);
-        //                pbPhoto.BackgroundImageLayout = ImageLayout.Zoom;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("No se pudo obtener los datos del usuario.");
-        //    }
-        //}
+
+                if (userDetails["foto"] != null && !string.IsNullOrEmpty(userDetails["foto"].ToString()))
+                {
+                    byte[] fotoBytes = Convert.FromBase64String(userDetails["foto"].ToString());
+                    using (var ms = new MemoryStream(fotoBytes))
+                    {
+                        pbPhoto.BackgroundImage = Image.FromStream(ms);
+                        pbPhoto.BackgroundImageLayout = ImageLayout.Stretch;
+                    }
+                }
+                else
+                {
+                    pbPhoto.Image = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los detalles del usuario: " + ex.Message);
+            }
+        }
         public void ClearForm()
         {
             txtName.Clear();
@@ -70,56 +84,10 @@ namespace PuntuApp.UserControls
             txtPassword.Clear();
             txtPassVeri.Clear();
             cbUserType.SelectedIndex = 0;
-            //pbPhoto.BackgroundImage = Properties.Resources.account_circle_24dp_1B1925_FILL0_wght400_GRAD0_opsz241;
-
+            pbPhoto.BackgroundImage = null;
+            pbPhoto.Image = null;
             isEditing = false;
-            //userId = 0;
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            ClearForm();
-            navigationControl.Display(1);
-            var employeesPage = navigationControl.GetControl<EmployeesPage>(1);
-            //employeesPage.LoadEmployees();
-        }
-
-        //private void btnEliminar_Click(object sender, EventArgs e)
-        //{
-        //    if (isEditing && userId >= 0)
-        //    {
-        //        if (userId == loggedInUserId)
-        //        {
-        //            MessageBox.Show("No se puede eliminar el usuario que está actualmente conectado.");
-        //            return;
-        //        }
-
-        //        var result = MessageBox.Show("¿Está seguro de que desea eliminar este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        //        if (result == DialogResult.Yes)
-        //        {
-        //            try
-        //            {
-        //                bool deleted = dbHelper.DeleteUser(userId);
-        //                if (!deleted)
-        //                {
-        //                    MessageBox.Show("Error al eliminar el usuario.");
-        //                    return;
-        //                }
-        //                MessageBox.Show("Usuario eliminado correctamente.");
-
-        //                btnCancelar_Click(sender, e);
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                MessageBox.Show("Error: " + ex.Message);
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("No hay usuario seleccionado para eliminar.");
-        //    }
-        //}
-
         private void btnPhoto_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -137,73 +105,128 @@ namespace PuntuApp.UserControls
                 }
             }
         }
-        //private void btnAddUser_Click(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtName.Text) ||
-        //        string.IsNullOrWhiteSpace(txtUsername.Text))
-        //    {
-        //        MessageBox.Show("Los campos de nombre y nombre de usuario son obligatorios.");
-        //        return;
-        //    }
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            ClearForm();
+            navigationControl.Display(1);
+            var employeesPage = navigationControl.GetControl<EmployeesPage>(1);
+            employeesPage.LoadUsers();
+        }
 
-        //    try
-        //    {
-        //        string fullName = txtName.Text;
-        //        string username = txtUsername.Text;
-        //        string roleName = cbUserType.SelectedItem?.ToString();
-        //        byte[] photo = GetPhotoBytes();
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(userToEdit))
+            {
+                MessageBox.Show("Por favor, seleccione un usuario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        //        if (string.IsNullOrWhiteSpace(txtPassword.Text) || txtPassword.Text != txtPassVeri.Text)
-        //        {
-        //            MessageBox.Show("Las contraseñas no coinciden o están vacías.");
-        //            return;
-        //        }
-        //        string password = txtPassword.Text;
+            var confirmResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar al usuario {userToEdit}?",
+                "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
+                {
+                    var client = new UserServiceClient();
+                    string response = client.deleteUser(userToEdit);
 
-        //        if (isEditing)
-        //        {
-        //            bool updated = dbHelper.UpdateUser(userId, fullName, username, password, photo);
-        //            if (!updated)
-        //            {
-        //                MessageBox.Show("Error al actualizar el usuario.");
-        //                return;
-        //            }
+                    if (response == "Success")
+                    {
+                        MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearForm();
+                        navigationControl.Display(1);
+                        var employeesPage = navigationControl.GetControl<EmployeesPage>(1);
+                        employeesPage.LoadUsers();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error al eliminar el usuario: {response}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al eliminar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
-        //            long roleId = dbHelper.GetRoleId(roleName);
-        //            if (roleId == -1)
-        //            {
-        //                MessageBox.Show("El rol seleccionado no existe.");
-        //                return;
-        //            }
-        //            bool roleUpdated = dbHelper.UpdateUserRole(userId, roleId);
-        //            if (!roleUpdated)
-        //            {
-        //                MessageBox.Show("Error al actualizar el rol del usuario.");
-        //                return;
-        //            }
+        private void btnPhoto_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
 
-        //            MessageBox.Show("Usuario actualizado correctamente.");
-        //        }
-        //        else
-        //        {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    pbPhoto.BackgroundImage = Image.FromFile(filePath);
+                    pbPhoto.BackgroundImageLayout = ImageLayout.Zoom;
 
-        //            long newUserId = dbHelper.AddUser(fullName, username, password, photo);
-        //            if (newUserId == -1)
-        //            {
-        //                MessageBox.Show("Error al agregar el usuario.");
-        //                return;
-        //            }
+                }
+            }
+        }
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(userToEdit))
+            {
+                MessageBox.Show("Por favor, seleccione un usuario para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        //            long roleId = dbHelper.GetRoleId(roleName);
-        //            if (roleId == -1)
-        //            {
-        //                MessageBox.Show("El rol seleccionado no existe.");
-        //                return;
-        //            }
-        //            bool roleAssigned = dbHelper.AssignRoleToUser(newUserId, roleId);
-        //            if (!roleAssigned)
-        //            {
-        //                MessageBox.Show("Error al asignar el rol al usuario.");        //                return;        //            }        //            MessageBox.Show("Usuario agregado correctamente.");        //        }        //        isEditing = false;        //        userId = 0;        //        btnCancelar_Click(sender, e);        //    }        //    catch (Exception ex)        //    {        //        MessageBox.Show("Error: " + ex.Message);        //    }        //}        private byte[] GetPhotoBytes()        {            if (pbPhoto.BackgroundImage == null) return null;            using (var ms = new System.IO.MemoryStream())            {                pbPhoto.BackgroundImage.Save(ms, pbPhoto.BackgroundImage.RawFormat);                return ms.ToArray();            }        }    }
+            var changes = new Dictionary<string, object>();
+
+            if (txtName.Text != (string)userDetails["name"]) changes.Add("name", txtName.Text);
+            if (txtUsername.Text != (string)userDetails["username"]) changes.Add("username", txtUsername.Text);
+            if (cbUserType.SelectedItem.ToString() != (string)userDetails["rol"]) changes.Add("rol", cbUserType.SelectedItem.ToString());
+            if (!string.IsNullOrEmpty(txtPassword.Text) && txtPassword.Text == txtPassVeri.Text)
+                changes.Add("password", txtPassword.Text);
+
+            if (pbPhoto.BackgroundImage != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    pbPhoto.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    string base64Image = Convert.ToBase64String(ms.ToArray());
+                    changes.Add("foto", base64Image);
+                }
+            }
+
+            if (changes.Count == 0)
+            {
+                MessageBox.Show("No se detectaron cambios para guardar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Construir la cadena de cambios en el formato clave=valor;clave=valor
+            var changeList = changes.Select(kvp => $"{kvp.Key}={kvp.Value}");
+            string changesString = string.Join(";", changeList);
+
+            try
+            {
+                var client = new UserServiceClient();
+                string response = client.updateUser(userToEdit, changesString);
+
+                if (response == "Success")
+                {
+                    MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearForm();
+                    navigationControl.Display(1);
+                    var employeesPage = navigationControl.GetControl<EmployeesPage>(1);
+                    employeesPage.LoadUsers();
+                }
+                else
+                {
+                    MessageBox.Show($"Error al actualizar el usuario: {response}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
