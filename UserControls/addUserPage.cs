@@ -9,6 +9,7 @@ namespace PuntuApp.UserControls
     public partial class addUserPage : UserControl
     {
         private NavigationControl navigationControl;
+        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
         private string username;
         private string role;
         public addUserPage(NavigationControl navigationControl, string username, string role)

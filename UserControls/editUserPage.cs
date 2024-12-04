@@ -14,6 +14,7 @@ namespace PuntuApp.UserControls
     public partial class editUserPage : UserControl
     {
         private NavigationControl navigationControl;
+        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
         private string username;
         private string role;
         private bool isEditing = false;

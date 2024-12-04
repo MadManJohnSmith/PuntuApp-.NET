@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/Login/UserService?xsd=1" namespace="http://CompLogin/" />
     </xsd:schema>
   </types>
+  <message name="getUserDetails">
+    <part name="parameters" element="tns:getUserDetails" />
+  </message>
+  <message name="getUserDetailsResponse">
+    <part name="parameters" element="tns:getUserDetailsResponse" />
+  </message>
   <message name="getUsersWithAttendance">
     <part name="parameters" element="tns:getUsersWithAttendance" />
   </message>
@@ -12,6 +18,10 @@
     <part name="parameters" element="tns:getUsersWithAttendanceResponse" />
   </message>
   <portType name="UserService">
+    <operation name="getUserDetails">
+      <input wsam:Action="http://CompLogin/UserService/getUserDetailsRequest" message="tns:getUserDetails" />
+      <output wsam:Action="http://CompLogin/UserService/getUserDetailsResponse" message="tns:getUserDetailsResponse" />
+    </operation>
     <operation name="getUsersWithAttendance">
       <input wsam:Action="http://CompLogin/UserService/getUsersWithAttendanceRequest" message="tns:getUsersWithAttendance" />
       <output wsam:Action="http://CompLogin/UserService/getUsersWithAttendanceResponse" message="tns:getUsersWithAttendanceResponse" />
@@ -19,6 +29,15 @@
   </portType>
   <binding name="UserServicePortBinding" type="tns:UserService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getUserDetails">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="getUsersWithAttendance">
       <soap:operation soapAction="" />
       <input>

@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://CompLogin/" targetNamespace="http://CompLogin/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getUserDetails" type="tns:getUserDetails" />
+  <xs:element name="getUserDetailsResponse" type="tns:getUserDetailsResponse" />
   <xs:element name="getUsersWithAttendance" type="tns:getUsersWithAttendance" />
   <xs:element name="getUsersWithAttendanceResponse" type="tns:getUsersWithAttendanceResponse" />
+  <xs:complexType name="getUserDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="getUsersWithAttendance">
     <xs:sequence />
   </xs:complexType>

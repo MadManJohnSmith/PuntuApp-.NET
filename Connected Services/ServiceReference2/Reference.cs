@@ -15,8 +15,19 @@ namespace WindowsFormsApp1.ServiceReference2 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://CompLogin/", ConfigurationName="ServiceReference2.UserService")]
     public interface UserService {
         
-        // CODEGEN: Generating message contract since element name return from namespace  is not marked nillable
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUserDetailsRequest", ReplyAction="http://CompLogin/UserService/getUserDetailsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.getUserDetailsResponse getUserDetails(WindowsFormsApp1.ServiceReference2.getUserDetailsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUserDetailsRequest", ReplyAction="http://CompLogin/UserService/getUserDetailsResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsResponse> getUserDetailsAsync(WindowsFormsApp1.ServiceReference2.getUserDetailsRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUsersWithAttendanceRequest", ReplyAction="http://CompLogin/UserService/getUsersWithAttendanceResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse getUsersWithAttendance(WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUsersWithAttendanceRequest", ReplyAction="http://CompLogin/UserService/getUsersWithAttendanceResponse")]
@@ -26,60 +37,63 @@ namespace WindowsFormsApp1.ServiceReference2 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class getUsersWithAttendanceRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUserDetails", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getUserDetailsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUsersWithAttendance", Namespace="http://CompLogin/", Order=0)]
-        public WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public getUserDetailsRequest() {
+        }
+        
+        public getUserDetailsRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUserDetailsResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getUserDetailsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] @return;
+        
+        public getUserDetailsResponse() {
+        }
+        
+        public getUserDetailsResponse(string[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersWithAttendance", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getUsersWithAttendanceRequest {
         
         public getUsersWithAttendanceRequest() {
         }
-        
-        public getUsersWithAttendanceRequest(WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequestBody Body) {
-            this.Body = Body;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class getUsersWithAttendanceRequestBody {
-        
-        public getUsersWithAttendanceRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersWithAttendanceResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
     public partial class getUsersWithAttendanceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="getUsersWithAttendanceResponse", Namespace="http://CompLogin/", Order=0)]
-        public WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
         
         public getUsersWithAttendanceResponse() {
         }
         
-        public getUsersWithAttendanceResponse(WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class getUsersWithAttendanceResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string @return;
-        
-        public getUsersWithAttendanceResponseBody() {
-        }
-        
-        public getUsersWithAttendanceResponseBody(string @return) {
+        public getUsersWithAttendanceResponse(string @return) {
             this.@return = @return;
         }
     }
@@ -112,15 +126,37 @@ namespace WindowsFormsApp1.ServiceReference2 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.getUserDetailsResponse WindowsFormsApp1.ServiceReference2.UserService.getUserDetails(WindowsFormsApp1.ServiceReference2.getUserDetailsRequest request) {
+            return base.Channel.getUserDetails(request);
+        }
+        
+        public string[] getUserDetails(string arg0) {
+            WindowsFormsApp1.ServiceReference2.getUserDetailsRequest inValue = new WindowsFormsApp1.ServiceReference2.getUserDetailsRequest();
+            inValue.arg0 = arg0;
+            WindowsFormsApp1.ServiceReference2.getUserDetailsResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUserDetails(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsResponse> WindowsFormsApp1.ServiceReference2.UserService.getUserDetailsAsync(WindowsFormsApp1.ServiceReference2.getUserDetailsRequest request) {
+            return base.Channel.getUserDetailsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsResponse> getUserDetailsAsync(string arg0) {
+            WindowsFormsApp1.ServiceReference2.getUserDetailsRequest inValue = new WindowsFormsApp1.ServiceReference2.getUserDetailsRequest();
+            inValue.arg0 = arg0;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUserDetailsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse WindowsFormsApp1.ServiceReference2.UserService.getUsersWithAttendance(WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest request) {
             return base.Channel.getUsersWithAttendance(request);
         }
         
         public string getUsersWithAttendance() {
             WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest inValue = new WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest();
-            inValue.Body = new WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequestBody();
             WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUsersWithAttendance(inValue);
-            return retVal.Body.@return;
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -130,7 +166,6 @@ namespace WindowsFormsApp1.ServiceReference2 {
         
         public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse> getUsersWithAttendanceAsync() {
             WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest inValue = new WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest();
-            inValue.Body = new WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequestBody();
             return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUsersWithAttendanceAsync(inValue);
         }
     }

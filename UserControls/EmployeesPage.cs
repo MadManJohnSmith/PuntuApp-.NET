@@ -16,7 +16,8 @@ namespace PuntuApp.UserControls
     {
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedtColor = Color.FromArgb(203, 220, 235);
-        private NavigationControl navigationControl; 
+        private NavigationControl navigationControl;
+        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
         private string username;
         private string role;
         private DataTable employeesData;
@@ -117,57 +118,7 @@ namespace PuntuApp.UserControls
             var editPage = navigationControl.GetControl<editUserPage>(4);
             editPage.ClearForm();
             navigationControl.Display(3);
-        }
-        private void AddTestRowsToDataGridView()
-        {
-            try
-            {
-                // Crear un nuevo DataTable con las columnas correctas
-                DataTable testDataTable = new DataTable();
-                testDataTable.Columns.Add("ID", typeof(int));
-                testDataTable.Columns.Add("name", typeof(string));
-                testDataTable.Columns.Add("Username", typeof(string));
-                testDataTable.Columns.Add("lastEntry", typeof(DateTime));
-                testDataTable.Columns.Add("lastExit", typeof(DateTime));
-                testDataTable.Columns.Add("Estado", typeof(string));
-                // Crear filas de ejemplo
-                DataRow row1 = testDataTable.NewRow();
-                row1["ID"] = 1;
-                row1["name"] = "Juan Pérez";
-                row1["Username"] = "juanperez";
-                row1["lastEntry"] = DateTime.Now.AddMinutes(-30);
-                row1["lastExit"] = DateTime.Now.AddMinutes(-10);
-                row1["Estado"] = "Activo";
-                testDataTable.Rows.Add(row1);
-
-                DataRow row2 = testDataTable.NewRow();
-                row2["ID"] = 2;
-                row2["name"] = "María López";
-                row2["Username"] = "marialopez";
-                row2["lastEntry"] = DateTime.Now.AddHours(-2);
-                row2["lastExit"] = DateTime.Now.AddHours(-1);
-                row2["Estado"] = "Offline";
-                testDataTable.Rows.Add(row2);
-
-                DataRow row3 = testDataTable.NewRow();
-                row3["ID"] = 3;
-                row3["name"] = "Carlos Ruiz";
-                row3["Username"] = "carlosruiz";
-                row3["lastEntry"] = DateTime.Now.AddMinutes(-60);
-                row3["lastExit"] = DBNull.Value;
-                row3["Estado"] = "Activo";
-                testDataTable.Rows.Add(row3);
-
-                // Asignar el DataTable de prueba al DataGridView
-                dataGridView1.DataSource = testDataTable;
-                dataGridView1.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al añadir filas de prueba: " + ex.Message);
-            }
-        }
-        WindowsFormsApp1.ServiceReference2.UserServiceClient client = new WindowsFormsApp1.ServiceReference2.UserServiceClient();
+        }        
         public void LoadUsers()
         {
             try
@@ -191,7 +142,7 @@ namespace PuntuApp.UserControls
                 // Llenar las filas
                 foreach (var user in userDataArray)
                 {
-                    string username = (string)user["username"];
+                    String username = (string)user["username"];
                     string name = (string)user["name"];
                     string rol = (string)user["rol"];
                     string estado = (string)user["estado"];
@@ -214,11 +165,11 @@ namespace PuntuApp.UserControls
 
                 // Ajustar ancho de las columnas
 
-                dataGridView1.Columns["Nombre"].FillWeight = 26f;
+                dataGridView1.Columns["Nombre"].FillWeight = 22f;
                 dataGridView1.Columns["Username"].FillWeight = 17f;
                 dataGridView1.Columns["Rol"].FillWeight = 10f;
-                dataGridView1.Columns["Última Entrada"].FillWeight = 18f;
-                dataGridView1.Columns["Última Salida"].FillWeight = 18f;
+                dataGridView1.Columns["Última Entrada"].FillWeight = 20f;
+                dataGridView1.Columns["Última Salida"].FillWeight = 20f;
                 dataGridView1.Columns["Estado"].FillWeight = 10f;
             }
             catch (Exception ex)

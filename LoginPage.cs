@@ -56,8 +56,8 @@ namespace PuntuApp
         
         private class LoginData
         {
-            public string username { get; set; }
-            public string rol { get; set; }
+            public String username { get; set; }
+            public String rol { get; set; }
         }
     }
 }

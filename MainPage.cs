@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.ServiceReference2;
 
 
 namespace PuntuApp
@@ -32,6 +34,7 @@ namespace PuntuApp
             this.role = role;
             InitializeNavigationButtons();
             InitializeNavigationControl();
+            LoadUserDetails(username);
         }
         private void InitializeNavigationControl()
         {
@@ -82,6 +85,42 @@ namespace PuntuApp
             {
                 navigationControl.Display(2);
                 navigationButtons.Highlight(btnUsuario);
+            }
+        }
+        public void LoadUserDetails(string username)
+        {
+            try
+            {
+                var client = new UserServiceClient();
+                string[] userDetails = client.getUserDetails(username);
+
+                if (userDetails != null && userDetails.Length >= 4) // Verifica que la lista tenga al menos 4 elementos
+                {
+                    // Asignar valores a los Labels
+                    lblState.Text = "Estado: " + userDetails[3]; // Índice 3 corresponde a "estado"
+                    lblUserInfo.Text = "Usuario: " + userDetails[0] + "\n" + userDetails[2]; // Índices 0 (username) y 2 (rol)
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron detalles para el usuario.");
+                }
+
+                byte[] fotoBytes = null;
+
+                if (userDetails.Length >= 9 && !string.IsNullOrEmpty(userDetails[8]))
+                {
+                    fotoBytes = Convert.FromBase64String(userDetails[8]);
+                    using (var ms = new MemoryStream(fotoBytes))
+                    {
+                        pictureBox1.BackgroundImage = Image.FromStream(ms);
+                        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los detalles del usuario: " + ex.Message);
             }
         }
         //private void UpdateUserInfo(int userId)
