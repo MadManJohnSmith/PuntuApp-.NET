@@ -44,12 +44,6 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cbUserType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtMaterno = new System.Windows.Forms.TextBox();
-            this.txtPaterno = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,8 +58,6 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -83,6 +75,7 @@ namespace PuntuApp.UserControls
             this.btnAddUser.TabIndex = 3;
             this.btnAddUser.Text = "Agregar Usuario";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // label6
             // 
@@ -234,76 +227,6 @@ namespace PuntuApp.UserControls
             this.label7.Text = "Tipo de Usuario";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 35);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Apellido Materno";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 35);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Apellido Paterno: ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.txtMaterno, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(404, 3);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(177, 59);
-            this.tableLayoutPanel9.TabIndex = 2;
-            // 
-            // txtMaterno
-            // 
-            this.txtMaterno.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMaterno.Location = new System.Drawing.Point(3, 38);
-            this.txtMaterno.Name = "txtMaterno";
-            this.txtMaterno.Size = new System.Drawing.Size(171, 20);
-            this.txtMaterno.TabIndex = 1;
-            // 
-            // txtPaterno
-            // 
-            this.txtPaterno.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPaterno.Location = new System.Drawing.Point(3, 38);
-            this.txtPaterno.Name = "txtPaterno";
-            this.txtPaterno.Size = new System.Drawing.Size(170, 20);
-            this.txtPaterno.TabIndex = 1;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.txtPaterno, 0, 1);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(222, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(176, 59);
-            this.tableLayoutPanel8.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -311,9 +234,9 @@ namespace PuntuApp.UserControls
             this.label1.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 35);
+            this.label1.Size = new System.Drawing.Size(572, 35);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre(s): ";
+            this.label1.Text = "Nombre Completo: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // txtName
@@ -321,7 +244,7 @@ namespace PuntuApp.UserControls
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Location = new System.Drawing.Point(3, 38);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(207, 20);
+            this.txtName.Size = new System.Drawing.Size(572, 20);
             this.txtName.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -336,18 +259,16 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(213, 59);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(578, 59);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -395,6 +316,7 @@ namespace PuntuApp.UserControls
             this.btnPhoto.TabIndex = 1;
             this.btnPhoto.Text = "Subir Foto de Perfil";
             this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click_1);
             // 
             // tableLayoutPanel2
             // 
@@ -425,6 +347,7 @@ namespace PuntuApp.UserControls
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -456,10 +379,6 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -484,12 +403,6 @@ namespace PuntuApp.UserControls
         private Label label4;
         private TextBox txtUsername;
         private TableLayoutPanel tableLayoutPanel5;
-        private Label label3;
-        private Label label2;
-        private TableLayoutPanel tableLayoutPanel9;
-        private TextBox txtMaterno;
-        private TextBox txtPaterno;
-        private TableLayoutPanel tableLayoutPanel8;
         private Label label1;
         private TextBox txtName;
         private TableLayoutPanel tableLayoutPanel7;

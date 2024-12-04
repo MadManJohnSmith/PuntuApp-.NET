@@ -200,6 +200,9 @@
     <None Include="Connected Services\ServiceReference2\UserService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.addUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.deleteUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
