@@ -203,7 +203,19 @@
     <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.addUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.breakTimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.deleteUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse.datasource">

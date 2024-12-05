@@ -16,6 +16,15 @@ namespace WindowsFormsApp1.ServiceReference2 {
     public interface UserService {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/checkInOrOutNowRequest", ReplyAction="http://CompLogin/UserService/checkInOrOutNowResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse checkInOrOutNow(WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/checkInOrOutNowRequest", ReplyAction="http://CompLogin/UserService/checkInOrOutNowResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse> checkInOrOutNowAsync(WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUsersWithAttendanceRequest", ReplyAction="http://CompLogin/UserService/getUsersWithAttendanceResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,6 +41,15 @@ namespace WindowsFormsApp1.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getUserDetailsJSONRequest", ReplyAction="http://CompLogin/UserService/getUserDetailsJSONResponse")]
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getUserDetailsJSONResponse> getUserDetailsJSONAsync(WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/breakTimeRequest", ReplyAction="http://CompLogin/UserService/breakTimeResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.breakTimeResponse breakTime(WindowsFormsApp1.ServiceReference2.breakTimeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/breakTimeRequest", ReplyAction="http://CompLogin/UserService/breakTimeResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.breakTimeResponse> breakTimeAsync(WindowsFormsApp1.ServiceReference2.breakTimeRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/deleteUserRequest", ReplyAction="http://CompLogin/UserService/deleteUserResponse")]
@@ -61,6 +79,24 @@ namespace WindowsFormsApp1.ServiceReference2 {
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.updateUserResponse> updateUserAsync(WindowsFormsApp1.ServiceReference2.updateUserRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/checkInOrOutCustomRequest", ReplyAction="http://CompLogin/UserService/checkInOrOutCustomResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse checkInOrOutCustom(WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/checkInOrOutCustomRequest", ReplyAction="http://CompLogin/UserService/checkInOrOutCustomResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse> checkInOrOutCustomAsync(WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getMonthlyRecordsRequest", ReplyAction="http://CompLogin/UserService/getMonthlyRecordsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse getMonthlyRecords(WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/getMonthlyRecordsRequest", ReplyAction="http://CompLogin/UserService/getMonthlyRecordsResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse> getMonthlyRecordsAsync(WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/addUserRequest", ReplyAction="http://CompLogin/UserService/addUserResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -68,6 +104,42 @@ namespace WindowsFormsApp1.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://CompLogin/UserService/addUserRequest", ReplyAction="http://CompLogin/UserService/addUserResponse")]
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.addUserResponse> addUserAsync(WindowsFormsApp1.ServiceReference2.addUserRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="checkInOrOutNow", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class checkInOrOutNowRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public checkInOrOutNowRequest() {
+        }
+        
+        public checkInOrOutNowRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="checkInOrOutNowResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class checkInOrOutNowResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public checkInOrOutNowResponse() {
+        }
+        
+        public checkInOrOutNowResponse(string @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -130,6 +202,42 @@ namespace WindowsFormsApp1.ServiceReference2 {
         }
         
         public getUserDetailsJSONResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="breakTime", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class breakTimeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public breakTimeRequest() {
+        }
+        
+        public breakTimeRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="breakTimeResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class breakTimeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public breakTimeResponse() {
+        }
+        
+        public breakTimeResponse(string @return) {
             this.@return = @return;
         }
     }
@@ -250,6 +358,88 @@ namespace WindowsFormsApp1.ServiceReference2 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="checkInOrOutCustom", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class checkInOrOutCustomRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public checkInOrOutCustomRequest() {
+        }
+        
+        public checkInOrOutCustomRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="checkInOrOutCustomResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class checkInOrOutCustomResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public checkInOrOutCustomResponse() {
+        }
+        
+        public checkInOrOutCustomResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getMonthlyRecords", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getMonthlyRecordsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        public getMonthlyRecordsRequest() {
+        }
+        
+        public getMonthlyRecordsRequest(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getMonthlyRecordsResponse", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
+    public partial class getMonthlyRecordsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CompLogin/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public getMonthlyRecordsResponse() {
+        }
+        
+        public getMonthlyRecordsResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="addUser", WrapperNamespace="http://CompLogin/", IsWrapped=true)]
     public partial class addUserRequest {
         
@@ -331,6 +521,29 @@ namespace WindowsFormsApp1.ServiceReference2 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse WindowsFormsApp1.ServiceReference2.UserService.checkInOrOutNow(WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest request) {
+            return base.Channel.checkInOrOutNow(request);
+        }
+        
+        public string checkInOrOutNow(string arg0) {
+            WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest inValue = new WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest();
+            inValue.arg0 = arg0;
+            WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).checkInOrOutNow(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse> WindowsFormsApp1.ServiceReference2.UserService.checkInOrOutNowAsync(WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest request) {
+            return base.Channel.checkInOrOutNowAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.checkInOrOutNowResponse> checkInOrOutNowAsync(string arg0) {
+            WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest inValue = new WindowsFormsApp1.ServiceReference2.checkInOrOutNowRequest();
+            inValue.arg0 = arg0;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).checkInOrOutNowAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceResponse WindowsFormsApp1.ServiceReference2.UserService.getUsersWithAttendance(WindowsFormsApp1.ServiceReference2.getUsersWithAttendanceRequest request) {
             return base.Channel.getUsersWithAttendance(request);
         }
@@ -372,6 +585,29 @@ namespace WindowsFormsApp1.ServiceReference2 {
             WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest inValue = new WindowsFormsApp1.ServiceReference2.getUserDetailsJSONRequest();
             inValue.arg0 = arg0;
             return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getUserDetailsJSONAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.breakTimeResponse WindowsFormsApp1.ServiceReference2.UserService.breakTime(WindowsFormsApp1.ServiceReference2.breakTimeRequest request) {
+            return base.Channel.breakTime(request);
+        }
+        
+        public string breakTime(string arg0) {
+            WindowsFormsApp1.ServiceReference2.breakTimeRequest inValue = new WindowsFormsApp1.ServiceReference2.breakTimeRequest();
+            inValue.arg0 = arg0;
+            WindowsFormsApp1.ServiceReference2.breakTimeResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).breakTime(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.breakTimeResponse> WindowsFormsApp1.ServiceReference2.UserService.breakTimeAsync(WindowsFormsApp1.ServiceReference2.breakTimeRequest request) {
+            return base.Channel.breakTimeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.breakTimeResponse> breakTimeAsync(string arg0) {
+            WindowsFormsApp1.ServiceReference2.breakTimeRequest inValue = new WindowsFormsApp1.ServiceReference2.breakTimeRequest();
+            inValue.arg0 = arg0;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).breakTimeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -443,6 +679,56 @@ namespace WindowsFormsApp1.ServiceReference2 {
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).updateUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse WindowsFormsApp1.ServiceReference2.UserService.checkInOrOutCustom(WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest request) {
+            return base.Channel.checkInOrOutCustom(request);
+        }
+        
+        public string checkInOrOutCustom(string arg0, string arg1) {
+            WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest inValue = new WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).checkInOrOutCustom(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse> WindowsFormsApp1.ServiceReference2.UserService.checkInOrOutCustomAsync(WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest request) {
+            return base.Channel.checkInOrOutCustomAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.checkInOrOutCustomResponse> checkInOrOutCustomAsync(string arg0, string arg1) {
+            WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest inValue = new WindowsFormsApp1.ServiceReference2.checkInOrOutCustomRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).checkInOrOutCustomAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse WindowsFormsApp1.ServiceReference2.UserService.getMonthlyRecords(WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest request) {
+            return base.Channel.getMonthlyRecords(request);
+        }
+        
+        public string getMonthlyRecords(string arg0, string arg1) {
+            WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest inValue = new WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse retVal = ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getMonthlyRecords(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse> WindowsFormsApp1.ServiceReference2.UserService.getMonthlyRecordsAsync(WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest request) {
+            return base.Channel.getMonthlyRecordsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference2.getMonthlyRecordsResponse> getMonthlyRecordsAsync(string arg0, string arg1) {
+            WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest inValue = new WindowsFormsApp1.ServiceReference2.getMonthlyRecordsRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            return ((WindowsFormsApp1.ServiceReference2.UserService)(this)).getMonthlyRecordsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

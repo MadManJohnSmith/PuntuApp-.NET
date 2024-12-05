@@ -36,27 +36,28 @@ namespace PuntuApp.UserControls
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblWorkedMonth = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblRequiredMonth = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblLastEntryToday = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblWorkedToday = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblLastExitToday = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblWorkShift = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBreak = new System.Windows.Forms.Button();
+            this.btnCheckInCustom = new System.Windows.Forms.Button();
+            this.btnCheckInNow = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
@@ -137,7 +138,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(139)))), ((int)(((byte)(193)))));
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lblWorkedMonth, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
@@ -148,16 +149,15 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel9.Size = new System.Drawing.Size(283, 62);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
-            // label5
+            // lblWorkedMonth
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(277, 37);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "12h 31m";
+            this.lblWorkedMonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWorkedMonth.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblWorkedMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblWorkedMonth.Location = new System.Drawing.Point(3, 0);
+            this.lblWorkedMonth.Name = "lblWorkedMonth";
+            this.lblWorkedMonth.Size = new System.Drawing.Size(277, 37);
+            this.lblWorkedMonth.TabIndex = 0;
             // 
             // label6
             // 
@@ -174,7 +174,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(139)))), ((int)(((byte)(193)))));
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lblRequiredMonth, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label8, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 71);
@@ -185,16 +185,15 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel10.Size = new System.Drawing.Size(283, 62);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
-            // label7
+            // lblRequiredMonth
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(277, 37);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "207h 0m";
+            this.lblRequiredMonth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRequiredMonth.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblRequiredMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblRequiredMonth.Location = new System.Drawing.Point(3, 0);
+            this.lblRequiredMonth.Name = "lblRequiredMonth";
+            this.lblRequiredMonth.Size = new System.Drawing.Size(277, 37);
+            this.lblRequiredMonth.TabIndex = 0;
             // 
             // label8
             // 
@@ -229,7 +228,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(139)))), ((int)(((byte)(193)))));
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.lblLastEntryToday, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.label10, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
@@ -240,16 +239,15 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel11.Size = new System.Drawing.Size(289, 65);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
-            // label9
+            // lblLastEntryToday
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(283, 39);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "09:00 am";
+            this.lblLastEntryToday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLastEntryToday.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblLastEntryToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblLastEntryToday.Location = new System.Drawing.Point(3, 0);
+            this.lblLastEntryToday.Name = "lblLastEntryToday";
+            this.lblLastEntryToday.Size = new System.Drawing.Size(283, 39);
+            this.lblLastEntryToday.TabIndex = 0;
             // 
             // label10
             // 
@@ -266,7 +264,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(139)))), ((int)(((byte)(193)))));
             this.tableLayoutPanel12.ColumnCount = 1;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.lblWorkedToday, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.label14, 0, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 74);
@@ -277,16 +275,15 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel12.Size = new System.Drawing.Size(289, 65);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
-            // label13
+            // lblWorkedToday
             // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.label13.Location = new System.Drawing.Point(3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(283, 39);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "0h 5m 51s";
+            this.lblWorkedToday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWorkedToday.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkedToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblWorkedToday.Location = new System.Drawing.Point(3, 0);
+            this.lblWorkedToday.Name = "lblWorkedToday";
+            this.lblWorkedToday.Size = new System.Drawing.Size(283, 39);
+            this.lblWorkedToday.TabIndex = 0;
             // 
             // label14
             // 
@@ -303,7 +300,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(139)))), ((int)(((byte)(193)))));
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.lblLastExitToday, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.label12, 0, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(298, 3);
@@ -314,16 +311,15 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel13.Size = new System.Drawing.Size(289, 65);
             this.tableLayoutPanel13.TabIndex = 2;
             // 
-            // label11
+            // lblLastExitToday
             // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(283, 39);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "5:00 pm";
+            this.lblLastExitToday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLastExitToday.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblLastExitToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblLastExitToday.Location = new System.Drawing.Point(3, 0);
+            this.lblLastExitToday.Name = "lblLastExitToday";
+            this.lblLastExitToday.Size = new System.Drawing.Size(283, 39);
+            this.lblLastExitToday.TabIndex = 0;
             // 
             // label12
             // 
@@ -341,7 +337,7 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Controls.Add(this.label15, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.lblWorkShift, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(298, 74);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -359,61 +355,81 @@ namespace PuntuApp.UserControls
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(283, 26);
             this.label15.TabIndex = 0;
-            this.label15.Text = "A determinar";
+            this.label15.Text = "Horario Laboral";
             // 
-            // label16
+            // lblWorkShift
             // 
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.label16.Location = new System.Drawing.Point(3, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(283, 39);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "0h 0m 0s";
+            this.lblWorkShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWorkShift.Font = new System.Drawing.Font("PT Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblWorkShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblWorkShift.Location = new System.Drawing.Point(3, 0);
+            this.lblWorkShift.Name = "lblWorkShift";
+            this.lblWorkShift.Size = new System.Drawing.Size(283, 39);
+            this.lblWorkShift.TabIndex = 1;
+            this.lblWorkShift.Text = "9:00am - 5:00pm";
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(151, 351);
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.31999F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.31999F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.36002F));
+            this.tableLayoutPanel8.Controls.Add(this.btnBreak, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnCheckInCustom, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnCheckInNow, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 351);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(442, 64);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(590, 64);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
-            // button1
+            // btnBreak
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(220)))), ((int)(((byte)(235)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("PT Sans", 8.249999F);
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 58);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Fichar y Seleccionar Hora";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBreak.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(220)))), ((int)(((byte)(235)))));
+            this.btnBreak.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBreak.FlatAppearance.BorderSize = 0;
+            this.btnBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBreak.Font = new System.Drawing.Font("PT Sans", 8.249999F);
+            this.btnBreak.Location = new System.Drawing.Point(395, 3);
+            this.btnBreak.Name = "btnBreak";
+            this.btnBreak.Size = new System.Drawing.Size(192, 58);
+            this.btnBreak.TabIndex = 4;
+            this.btnBreak.Text = "Empezar Descanso";
+            this.btnBreak.UseVisualStyleBackColor = false;
+            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
             // 
-            // button2
+            // btnCheckInCustom
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(220)))), ((int)(((byte)(235)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("PT Sans", 8.249999F);
-            this.button2.Location = new System.Drawing.Point(224, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 58);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Fichar Entrada";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCheckInCustom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(220)))), ((int)(((byte)(235)))));
+            this.btnCheckInCustom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCheckInCustom.FlatAppearance.BorderSize = 0;
+            this.btnCheckInCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckInCustom.Font = new System.Drawing.Font("PT Sans", 8.249999F);
+            this.btnCheckInCustom.Location = new System.Drawing.Point(3, 3);
+            this.btnCheckInCustom.Name = "btnCheckInCustom";
+            this.btnCheckInCustom.Size = new System.Drawing.Size(190, 58);
+            this.btnCheckInCustom.TabIndex = 3;
+            this.btnCheckInCustom.Text = "Fichar y Seleccionar Hora";
+            this.btnCheckInCustom.UseVisualStyleBackColor = false;
+            this.btnCheckInCustom.Click += new System.EventHandler(this.btnCheckInCustom_Click);
+            // 
+            // btnCheckInNow
+            // 
+            this.btnCheckInNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(220)))), ((int)(((byte)(235)))));
+            this.btnCheckInNow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCheckInNow.FlatAppearance.BorderSize = 0;
+            this.btnCheckInNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckInNow.Font = new System.Drawing.Font("PT Sans", 8.249999F);
+            this.btnCheckInNow.Location = new System.Drawing.Point(199, 3);
+            this.btnCheckInNow.Name = "btnCheckInNow";
+            this.btnCheckInNow.Size = new System.Drawing.Size(190, 58);
+            this.btnCheckInNow.TabIndex = 2;
+            this.btnCheckInNow.Text = "Fichar Entrada/Salida";
+            this.btnCheckInNow.UseVisualStyleBackColor = false;
+            this.btnCheckInNow.Click += new System.EventHandler(this.btnCheckInNow_Click);
             // 
             // label17
             // 
@@ -467,28 +483,29 @@ namespace PuntuApp.UserControls
         private MonthCalendar monthCalendar1;
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel9;
-        private Label label5;
+        private Label lblWorkedMonth;
         private Label label6;
         private TableLayoutPanel tableLayoutPanel10;
-        private Label label7;
+        private Label lblRequiredMonth;
         private Label label8;
         private TableLayoutPanel tableLayoutPanel7;
         private TableLayoutPanel tableLayoutPanel11;
-        private Label label9;
+        private Label lblLastEntryToday;
         private Label label10;
         private TableLayoutPanel tableLayoutPanel12;
-        private Label label13;
+        private Label lblWorkedToday;
         private Label label14;
         private TableLayoutPanel tableLayoutPanel13;
-        private Label label11;
+        private Label lblLastExitToday;
         private Label label12;
         private TableLayoutPanel tableLayoutPanel14;
         private Label label15;
-        private Label label16;
+        private Label lblWorkShift;
         private TableLayoutPanel tableLayoutPanel8;
-        private Button button1;
-        private Button button2;
         private Label label17;
         private Label label18;
+        private Button btnCheckInCustom;
+        private Button btnCheckInNow;
+        private Button btnBreak;
     }
 }

@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/Login/UserService?xsd=1" namespace="http://CompLogin/" />
     </xsd:schema>
   </types>
+  <message name="checkInOrOutNow">
+    <part name="parameters" element="tns:checkInOrOutNow" />
+  </message>
+  <message name="checkInOrOutNowResponse">
+    <part name="parameters" element="tns:checkInOrOutNowResponse" />
+  </message>
   <message name="getUsersWithAttendance">
     <part name="parameters" element="tns:getUsersWithAttendance" />
   </message>
@@ -16,6 +22,12 @@
   </message>
   <message name="getUserDetailsJSONResponse">
     <part name="parameters" element="tns:getUserDetailsJSONResponse" />
+  </message>
+  <message name="breakTime">
+    <part name="parameters" element="tns:breakTime" />
+  </message>
+  <message name="breakTimeResponse">
+    <part name="parameters" element="tns:breakTimeResponse" />
   </message>
   <message name="deleteUser">
     <part name="parameters" element="tns:deleteUser" />
@@ -35,6 +47,18 @@
   <message name="updateUserResponse">
     <part name="parameters" element="tns:updateUserResponse" />
   </message>
+  <message name="checkInOrOutCustom">
+    <part name="parameters" element="tns:checkInOrOutCustom" />
+  </message>
+  <message name="checkInOrOutCustomResponse">
+    <part name="parameters" element="tns:checkInOrOutCustomResponse" />
+  </message>
+  <message name="getMonthlyRecords">
+    <part name="parameters" element="tns:getMonthlyRecords" />
+  </message>
+  <message name="getMonthlyRecordsResponse">
+    <part name="parameters" element="tns:getMonthlyRecordsResponse" />
+  </message>
   <message name="addUser">
     <part name="parameters" element="tns:addUser" />
   </message>
@@ -42,6 +66,10 @@
     <part name="parameters" element="tns:addUserResponse" />
   </message>
   <portType name="UserService">
+    <operation name="checkInOrOutNow">
+      <input wsam:Action="http://CompLogin/UserService/checkInOrOutNowRequest" message="tns:checkInOrOutNow" />
+      <output wsam:Action="http://CompLogin/UserService/checkInOrOutNowResponse" message="tns:checkInOrOutNowResponse" />
+    </operation>
     <operation name="getUsersWithAttendance">
       <input wsam:Action="http://CompLogin/UserService/getUsersWithAttendanceRequest" message="tns:getUsersWithAttendance" />
       <output wsam:Action="http://CompLogin/UserService/getUsersWithAttendanceResponse" message="tns:getUsersWithAttendanceResponse" />
@@ -49,6 +77,10 @@
     <operation name="getUserDetailsJSON">
       <input wsam:Action="http://CompLogin/UserService/getUserDetailsJSONRequest" message="tns:getUserDetailsJSON" />
       <output wsam:Action="http://CompLogin/UserService/getUserDetailsJSONResponse" message="tns:getUserDetailsJSONResponse" />
+    </operation>
+    <operation name="breakTime">
+      <input wsam:Action="http://CompLogin/UserService/breakTimeRequest" message="tns:breakTime" />
+      <output wsam:Action="http://CompLogin/UserService/breakTimeResponse" message="tns:breakTimeResponse" />
     </operation>
     <operation name="deleteUser">
       <input wsam:Action="http://CompLogin/UserService/deleteUserRequest" message="tns:deleteUser" />
@@ -62,6 +94,14 @@
       <input wsam:Action="http://CompLogin/UserService/updateUserRequest" message="tns:updateUser" />
       <output wsam:Action="http://CompLogin/UserService/updateUserResponse" message="tns:updateUserResponse" />
     </operation>
+    <operation name="checkInOrOutCustom">
+      <input wsam:Action="http://CompLogin/UserService/checkInOrOutCustomRequest" message="tns:checkInOrOutCustom" />
+      <output wsam:Action="http://CompLogin/UserService/checkInOrOutCustomResponse" message="tns:checkInOrOutCustomResponse" />
+    </operation>
+    <operation name="getMonthlyRecords">
+      <input wsam:Action="http://CompLogin/UserService/getMonthlyRecordsRequest" message="tns:getMonthlyRecords" />
+      <output wsam:Action="http://CompLogin/UserService/getMonthlyRecordsResponse" message="tns:getMonthlyRecordsResponse" />
+    </operation>
     <operation name="addUser">
       <input wsam:Action="http://CompLogin/UserService/addUserRequest" message="tns:addUser" />
       <output wsam:Action="http://CompLogin/UserService/addUserResponse" message="tns:addUserResponse" />
@@ -69,6 +109,15 @@
   </portType>
   <binding name="UserServicePortBinding" type="tns:UserService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="checkInOrOutNow">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="getUsersWithAttendance">
       <soap:operation soapAction="" />
       <input>
@@ -79,6 +128,15 @@
       </output>
     </operation>
     <operation name="getUserDetailsJSON">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="breakTime">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -106,6 +164,24 @@
       </output>
     </operation>
     <operation name="updateUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="checkInOrOutCustom">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMonthlyRecords">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
