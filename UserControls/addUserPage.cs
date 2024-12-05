@@ -21,80 +21,9 @@ namespace PuntuApp.UserControls
             this.role = role;
         }
 
-        //private void btnAddUser_Click(object sender, EventArgs e)
-        //{
-        //    // Validaciones
-        //    if (string.IsNullOrWhiteSpace(txtName.Text) ||
-        //        string.IsNullOrWhiteSpace(txtPaterno.Text) ||
-        //        string.IsNullOrWhiteSpace(txtMaterno.Text) ||
-        //        string.IsNullOrWhiteSpace(txtUsername.Text) ||
-        //        string.IsNullOrWhiteSpace(txtPassword.Text) ||
-        //        string.IsNullOrWhiteSpace(txtPassVeri.Text))
-        //    {
-        //        MessageBox.Show("Todos los campos son obligatorios.");
-        //        return;
-        //    }
-
-        //    if (txtPassword.Text != txtPassVeri.Text)
-        //    {
-        //        MessageBox.Show("Las contraseñas no coinciden.");
-        //        return;
-        //    }
-
-        //    // Datos del usuario
-        //    string fullName = $"{txtName.Text} {txtPaterno.Text} {txtMaterno.Text}";
-        //    string username = txtUsername.Text;
-        //    string password = txtPassword.Text;
-        //    string roleName = cbUserType.SelectedItem?.ToString();
-        //    byte[] photo = GetPhotoBytes();
-
-        //    try
-        //    {
-        //        // Crear usuario en base de datos
-        //        DatabaseHelper dbHelper = new DatabaseHelper();
-        //        long userId = dbHelper.AddUser(fullName, username, password, photo);
-        //        if (userId == -1)
-        //        {
-        //            MessageBox.Show("Error al agregar el usuario.");
-        //            return;
-        //        }
-
-        //        // Obtener ID del rol y asignar al usuario
-        //        long roleId = dbHelper.GetRoleId(roleName);
-        //        if (roleId == -1)
-        //        {
-        //            MessageBox.Show("El rol seleccionado no existe.");
-        //            return;
-        //        }
-
-        //        bool roleAssigned = dbHelper.AssignRoleToUser(userId, roleId);
-        //        if (!roleAssigned)
-        //        {
-        //            MessageBox.Show("Error al asignar el rol al usuario.");
-        //            return;
-        //        }
-
-        //        // Crear usuario MySQL con privilegios según el rol
-        //        bool mysqlUserCreated = dbHelper.CreateMySQLUser(username, password, roleName);
-        //        if (!mysqlUserCreated)
-        //        {
-        //            MessageBox.Show("Error al crear el usuario MySQL.");
-        //            return;
-        //        }
-
-        //        MessageBox.Show("Usuario agregado correctamente.");
-
-
-        //        btnCancelar_Click(sender, e);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        //}
         private byte[] GetPhotoBytes()
         {
-            if(pbPhoto.Image == null) return null;
+            if (pbPhoto.Image == null) return null;
 
             using (var ms = new System.IO.MemoryStream())
             {
@@ -179,7 +108,7 @@ namespace PuntuApp.UserControls
                 {
                     MessageBox.Show("Usuario agregado correctamente.");
                     ClearForm();
-                    btnCancelar_Click(sender, e); // Regresar al menú anterior
+                    btnCancelar_Click(sender, e);// Regresar al menú anterior
                 }
                 else
                 {

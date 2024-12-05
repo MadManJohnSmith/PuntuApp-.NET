@@ -51,12 +51,12 @@ namespace PuntuApp.UserControls
         {
             dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
         }
-     
+
         public void LoadUsers()
         {
             try
             {
-                
+
                 var client = new UserServiceClient();
                 string jsonResponse = client.getUsersWithAttendance();
 
@@ -232,7 +232,7 @@ namespace PuntuApp.UserControls
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error al ordenar la columna '{columnName}': {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
         }
     }
 }

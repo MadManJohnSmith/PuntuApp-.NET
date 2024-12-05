@@ -42,6 +42,8 @@ namespace PuntuApp.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbUserType = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,8 +54,6 @@ namespace PuntuApp.UserControls
             this.label6 = new System.Windows.Forms.Label();
             this.txtPassVeri = new System.Windows.Forms.TextBox();
             this.btnEditUser = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbUserType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.btnEliminar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
@@ -223,6 +223,32 @@ namespace PuntuApp.UserControls
             this.tableLayoutPanel5.Size = new System.Drawing.Size(584, 65);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
+            // cbUserType
+            // 
+            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUserType.FormattingEnabled = true;
+            this.cbUserType.Items.AddRange(new object[] {
+            "Empleado",
+            "Administrador"});
+            this.cbUserType.Location = new System.Drawing.Point(219, 45);
+            this.cbUserType.Margin = new System.Windows.Forms.Padding(0);
+            this.cbUserType.Name = "cbUserType";
+            this.cbUserType.Size = new System.Drawing.Size(365, 21);
+            this.cbUserType.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Tipo de Usuario";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -338,32 +364,6 @@ namespace PuntuApp.UserControls
             this.btnEditUser.Text = "Guardar Cambios";
             this.btnEditUser.UseVisualStyleBackColor = true;
             this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(3, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(213, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Tipo de Usuario";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // cbUserType
-            // 
-            this.cbUserType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUserType.FormattingEnabled = true;
-            this.cbUserType.Items.AddRange(new object[] {
-            "Empleado",
-            "Administrador"});
-            this.cbUserType.Location = new System.Drawing.Point(219, 45);
-            this.cbUserType.Margin = new System.Windows.Forms.Padding(0);
-            this.cbUserType.Name = "cbUserType";
-            this.cbUserType.Size = new System.Drawing.Size(365, 21);
-            this.cbUserType.TabIndex = 4;
             // 
             // UserPage
             // 

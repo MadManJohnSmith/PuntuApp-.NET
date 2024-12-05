@@ -42,6 +42,7 @@ namespace PuntuApp
             this.lblState = new System.Windows.Forms.Label();
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSignOut = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -144,11 +145,13 @@ namespace PuntuApp
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblSignOut, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblState, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblUserInfo, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(174, 3);
@@ -180,7 +183,7 @@ namespace PuntuApp
             this.lblState.Location = new System.Drawing.Point(3, 0);
             this.lblState.Name = "lblState";
             this.lblState.Padding = new System.Windows.Forms.Padding(2);
-            this.lblState.Size = new System.Drawing.Size(262, 59);
+            this.lblState.Size = new System.Drawing.Size(202, 59);
             this.lblState.TabIndex = 2;
             this.lblState.Text = "Estado: ";
             this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -189,11 +192,11 @@ namespace PuntuApp
             // 
             this.lblUserInfo.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
             this.lblUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
-            this.lblUserInfo.Location = new System.Drawing.Point(268, 0);
+            this.lblUserInfo.Location = new System.Drawing.Point(208, 0);
             this.lblUserInfo.Margin = new System.Windows.Forms.Padding(0);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Padding = new System.Windows.Forms.Padding(2, 6, 2, 2);
-            this.lblUserInfo.Size = new System.Drawing.Size(268, 59);
+            this.lblUserInfo.Size = new System.Drawing.Size(208, 59);
             this.lblUserInfo.TabIndex = 1;
             this.lblUserInfo.Text = "Nombre de Usuario: MadManJohnSmith\r\nID: 00000001\r\n";
             this.lblUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,6 +208,21 @@ namespace PuntuApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 417);
             this.panel1.TabIndex = 4;
+            // 
+            // lblSignOut
+            // 
+            this.lblSignOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSignOut.Font = new System.Drawing.Font("PT Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSignOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            this.lblSignOut.Location = new System.Drawing.Point(416, 0);
+            this.lblSignOut.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSignOut.Name = "lblSignOut";
+            this.lblSignOut.Padding = new System.Windows.Forms.Padding(2, 6, 2, 2);
+            this.lblSignOut.Size = new System.Drawing.Size(120, 59);
+            this.lblSignOut.TabIndex = 3;
+            this.lblSignOut.Text = "Cerrar Sesion";
+            this.lblSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSignOut.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainPage
             // 
@@ -244,5 +262,6 @@ namespace PuntuApp
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem logOutToolStripMenuItem;
+        private Label lblSignOut;
     }
 }

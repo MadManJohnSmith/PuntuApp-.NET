@@ -105,16 +105,24 @@ namespace PuntuApp.UserControls
 
                 if (userDetails["foto"] != null && !string.IsNullOrEmpty(userDetails["foto"].ToString()))
                 {
-                    byte[] fotoBytes = Convert.FromBase64String(userDetails["foto"].ToString());
-                    using (var ms = new MemoryStream(fotoBytes))
+                    try
                     {
-                        pbPhoto.BackgroundImage = Image.FromStream(ms);
-                        pbPhoto.BackgroundImageLayout = ImageLayout.Stretch;
+                        byte[] fotoBytes = Convert.FromBase64String(userDetails["foto"].ToString());
+                        using (var ms = new MemoryStream(fotoBytes))
+                        {
+                            pbPhoto.BackgroundImage = Image.FromStream(ms);
+                            pbPhoto.BackgroundImageLayout = ImageLayout.Stretch;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        pbPhoto.BackgroundImage = null;
+                        Console.WriteLine("Error al cargar la foto de usuario: " + ex.Message);
                     }
                 }
                 else
                 {
-                    pbPhoto.Image = null;
+                    pbPhoto.BackgroundImage = null;
                 }
             }
             catch (Exception ex)

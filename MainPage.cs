@@ -13,6 +13,7 @@ namespace PuntuApp
     public partial class MainPage : Form
     {
         private bool isClosing = false;
+        private bool isLoggingOut = false;
 
         NavigationControl navigationControl;
         NavigationButtons navigationButtons;
@@ -35,17 +36,27 @@ namespace PuntuApp
         {
             navigationControl = new NavigationControl(new List<UserControl>(), panel1);
 
-            List<UserControl> userControls = new List<UserControl>()
+            if (role == "Administrador")
             {
-                new HomePage(username, role),//0
-                new EmployeesPage(navigationControl, username, role),//1
-                new UserPage(username, role), //2
-                new addUserPage(navigationControl, username, role),//3
-                new editUserPage(navigationControl, username, role)//4
-            };
-
-
-            navigationControl.SetUserControls(userControls);
+                List<UserControl> userControls = new List<UserControl>()
+                {
+                    new HomePage(username, role),// 0
+                    new EmployeesPage(navigationControl, username, role),// 1
+                    new UserPage(username, role),// 2
+                    new addUserPage(navigationControl, username, role),// 3
+                    new editUserPage(navigationControl, username, role)// 4
+                };
+                navigationControl.SetUserControls(userControls);
+            }
+            else if (role == "Empleado")
+            {
+                List<UserControl> userControls = new List<UserControl>()
+                {
+                    new HomePage(username, role),// 0
+                    new UserPage(username, role)// 1
+                };
+                navigationControl.SetUserControls(userControls);
+            }
 
             navigationControl.Display(0);
             navigationButtons.Highlight(btnHome);
@@ -53,9 +64,23 @@ namespace PuntuApp
 
         private void InitializeNavigationButtons()
         {
-            List<Button> buttons = new List<Button>()
-            { btnHome, btnEmpleados, btnUsuario};
-            navigationButtons = new NavigationButtons(buttons, btnDefaultColor, btnSelectedtColor);
+            if (role == "Administrador")
+            {
+                List<Button> buttons = new List<Button>()
+                { 
+                    btnHome, btnEmpleados, btnUsuario
+                };
+                navigationButtons = new NavigationButtons(buttons, btnDefaultColor, btnSelectedtColor);
+            }
+            else if (role == "Empleado")
+            {
+                List<Button> buttons = new List<Button>()
+                { 
+                    btnHome, btnUsuario
+                };
+                navigationButtons = new NavigationButtons(buttons, btnDefaultColor, btnSelectedtColor);
+                btnEmpleados.Visible = false;
+            }
         }
 
         public void LoadUserDetails(string username)
@@ -76,16 +101,26 @@ namespace PuntuApp
                     MessageBox.Show("No se encontraron detalles para el usuario.");
                 }
 
-                byte[] fotoBytes = null;
-
                 if (userDetails.Length >= 9 && !string.IsNullOrEmpty(userDetails[8]))
                 {
-                    fotoBytes = Convert.FromBase64String(userDetails[8]);
-                    using (var ms = new MemoryStream(fotoBytes))
+                    try
                     {
-                        pictureBox1.BackgroundImage = Image.FromStream(ms);
-                        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                        byte[] fotoBytes = Convert.FromBase64String(userDetails[8]);
+                        using (var ms = new MemoryStream(fotoBytes))
+                        {
+                            pictureBox1.BackgroundImage = Image.FromStream(ms);
+                            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        pictureBox1.BackgroundImage = null;
+                        Console.WriteLine("Error al cargar la foto de usuario: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    pictureBox1.BackgroundImage = null;
                 }
             }
             catch (Exception ex)
@@ -100,11 +135,16 @@ namespace PuntuApp
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
+            if (isLoggingOut)
+            {
+                return;
+            }
+
             if (isClosing) return;
 
             isClosing = true;
 
-            switch (MessageBox.Show(this, "�Seguro que quieres salir?", "Cerrando...", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "¿Seguro que quieres salir?", "Cerrando...", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:
                     Application.Exit();
@@ -120,6 +160,11 @@ namespace PuntuApp
 
         private void btnEmpleados_Click_1(object sender, EventArgs e)
         {
+            if (role != "Administrador")
+            {
+                MessageBox.Show("No tienes acceso a esta página.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (navigationControl != null)
             {
                 navigationControl.Display(1);
@@ -140,8 +185,33 @@ namespace PuntuApp
         {
             if (navigationControl != null)
             {
-                navigationControl.Display(2);
+                if (role == "Administrador")
+                {
+                    navigationControl.Display(2);//UserPage Administrador
+                }
+                else if (role == "Empleado")
+                {
+                    navigationControl.Display(1);//UserPage Empleado
+                }
                 navigationButtons.Highlight(btnUsuario);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            isLoggingOut = true;//Se agrega para evitar que se cierre por completo la app al cerrar sesión
+            this.Close();
+
+            var loginPage = this.Owner as LoginPage;
+            if (loginPage != null)
+            {
+                loginPage.ClearFields();
+                loginPage.Show();
+            }
+            else
+            {
+                loginPage = new LoginPage();
+                loginPage.Show();
             }
         }
     }

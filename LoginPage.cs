@@ -18,6 +18,12 @@ namespace PuntuApp
             InitializeComponent();
         }
 
+        public void ClearFields()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtUsername.Clear();
@@ -34,9 +40,10 @@ namespace PuntuApp
                 if (jsonResponse != null)
                 {
                     var loginData = JsonConvert.DeserializeObject<LoginData>(jsonResponse);
-                    this.Hide();
                     MainPage home = new MainPage(loginData.username, loginData.rol);
+                    home.Owner = this;//Se agrega para evitar que se cierre por completo la app al cerrar sesión
                     home.Show();
+                    this.Hide();
                 }
                 else
                 {
